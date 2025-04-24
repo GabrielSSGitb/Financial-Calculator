@@ -8,11 +8,8 @@
 
 <AnchorPane id="AnchorPane" prefHeight="428.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="financialcalculator.FXMLDocumentController">
     <children>
-        <Button fx:id="btnEnter" alignment="CENTER" contentDisplay="CENTER" layoutX="477.0" layoutY="262.0" onAction="#Calculate" prefHeight="141.0" prefWidth="63.0" text="Enter" />
-        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+        <Label fx:id="label" layoutX="152.0" layoutY="204.0" minHeight="16" minWidth="69" text="Teste" />
       <TextField fx:id="txtScreen" layoutX="52.0" layoutY="31.0" prefHeight="58.0" prefWidth="410.0" />
-      <Button fx:id="btn" layoutX="540.0" layoutY="131.0" mnemonicParsing="false" onAction="#add1" text="1" />
-      <Button fx:id="btn" layoutX="582.0" layoutY="131.0" mnemonicParsing="false" onAction="#add2" text="2" />
-      <Button fx:id="btnAddup" layoutX="721.0" layoutY="362.0" mnemonicParsing="false" text="+" />
+      <Button fx:id="btnAddup" layoutX="721.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleButtonAction" text="+" />
     </children>
 </AnchorPane>
