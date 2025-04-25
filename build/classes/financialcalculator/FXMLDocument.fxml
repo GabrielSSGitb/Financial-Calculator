@@ -6,10 +6,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="428.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="financialcalculator.FXMLDocumentController">
+<AnchorPane id="AnchorPane" onMousePressed="#btn" prefHeight="428.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="financialcalculator.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="152.0" layoutY="204.0" minHeight="16" minWidth="69" text="Teste" />
-      <TextField fx:id="txtScreen" layoutX="52.0" layoutY="31.0" prefHeight="58.0" prefWidth="410.0" />
-      <Button fx:id="btnAddup" layoutX="721.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleButtonAction" text="+" />
+      <TextField fx:id="txtScreen" alignment="CENTER_RIGHT" layoutX="52.0" layoutY="31.0" prefHeight="58.0" prefWidth="410.0" text="0.00" />
+      <Button fx:id="btnAddup" layoutX="721.0" layoutY="362.0" mnemonicParsing="false" onAction="#addUp" text="+" />
+      <Button layoutX="665.0" layoutY="362.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="∑+" />
+      <Button fx:id="btnAddup1" layoutX="622.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="31.0" text="." />
+      <Button fx:id="btnAddup11" layoutX="577.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleButtonAction" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="0" />
+      <Button fx:id="btn1" layoutX="577.0" layoutY="315.0" mnemonicParsing="false" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="1" />
+      <Button layoutX="395.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Enter" />
     </children>
 </AnchorPane>
