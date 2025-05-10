@@ -17,6 +17,8 @@ import javafx.scene.control.TextField;
  */
 public class FXMLDocumentController implements Initializable {
     ArrayList<Integer> array = new ArrayList<>(); //Creating an arrayList
+    private int result;
+    private int history;
     //Apply JSON here!!
     
     
@@ -27,22 +29,36 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
         //Enter btn
-        String addValue = txtScreen.getText();
-        array.add(Integer.parseInt(addValue));
+        array.add(Integer.parseInt(txtScreen.getText()));
+        txtScreen.setText("0.00"); //Add 0.00 on btn again
+        
     }
     @FXML
     private void addUp(ActionEvent event) {
         //Addup calculating:
-        int result = 0;
+        result = 0;
         for(int i = 0; i < array.size(); i++) {
             result += array.get(i);
         };
-        
+        array.clear(); //Clean the array
+        array.add(result); //Update value on the array
         txtScreen.setText(Integer.toString(result));
     };
     @FXML
+    private void subtraction(ActionEvent event) {
+        result = array.get(0);
+        array.remove(0);
+        for(int i = 0; i < array.size(); i++) {
+            result -= array.get(i);
+        };
+        System.out.println(result);
+    };
+    @FXML
     private void btn(ActionEvent event) {
-        //Start adding buttons
+       txtScreen.setText(""); //Clean Enter btn
+       Button btn = (Button) event.getSource();
+       String value = btn.getText(); // Get the text from the button
+       txtScreen.appendText(value); // Show it on the screen
     };
     
     @Override

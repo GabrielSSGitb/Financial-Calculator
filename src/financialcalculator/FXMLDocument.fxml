@@ -16,5 +16,14 @@
       <Button fx:id="btnAddup11" layoutX="577.0" layoutY="362.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="0" />
       <Button fx:id="btn1" layoutX="577.0" layoutY="315.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="1" />
       <Button layoutX="395.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Enter" />
+      <Button fx:id="btn11" layoutX="622.0" layoutY="315.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="2" />
+      <Button fx:id="btn111" layoutX="671.0" layoutY="315.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="3" />
+      <Button fx:id="btn1111" layoutX="577.0" layoutY="270.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="4" />
+      <Button fx:id="btn11111" layoutX="622.0" layoutY="270.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="5" />
+      <Button fx:id="btn111111" layoutX="671.0" layoutY="270.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="6" />
+      <Button fx:id="btn1111111" layoutX="577.0" layoutY="226.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="7" />
+      <Button fx:id="btn11111111" layoutX="622.0" layoutY="226.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="8" />
+      <Button fx:id="btn111111111" layoutX="671.0" layoutY="226.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="9" />
+      <Button fx:id="btnSubtraction" layoutX="719.0" layoutY="315.0" mnemonicParsing="false" onAction="#subtraction" prefHeight="31.0" prefWidth="31.0" text="-" />
     </children>
 </AnchorPane>
