@@ -8,14 +8,13 @@
 
 <AnchorPane id="AnchorPane" onDragDetected="#btn" prefHeight="428.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="financialcalculator.FXMLDocumentController">
     <children>
-        <Label fx:id="label" layoutX="152.0" layoutY="204.0" minHeight="16" minWidth="69" text="Teste" />
       <TextField fx:id="txtScreen" alignment="CENTER_RIGHT" layoutX="52.0" layoutY="31.0" prefHeight="58.0" prefWidth="410.0" text="0.00" />
       <Button fx:id="btnAddup" layoutX="721.0" layoutY="362.0" mnemonicParsing="false" onAction="#addUp" text="+" />
       <Button layoutX="665.0" layoutY="362.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="∑+" />
       <Button fx:id="btnAddup1" layoutX="622.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="31.0" text="." />
       <Button fx:id="btnAddup11" layoutX="577.0" layoutY="362.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="0" />
       <Button fx:id="btn1" layoutX="577.0" layoutY="315.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="1" />
-      <Button layoutX="395.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Enter" />
+      <Button layoutX="486.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="94.0" prefWidth="57.0" text="Enter" />
       <Button fx:id="btn11" layoutX="622.0" layoutY="315.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="2" />
       <Button fx:id="btn111" layoutX="671.0" layoutY="315.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="3" />
       <Button fx:id="btn1111" layoutX="577.0" layoutY="270.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="4" />
@@ -25,5 +24,9 @@
       <Button fx:id="btn11111111" layoutX="622.0" layoutY="226.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="8" />
       <Button fx:id="btn111111111" layoutX="671.0" layoutY="226.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="9" />
       <Button fx:id="btnSubtraction" layoutX="719.0" layoutY="315.0" mnemonicParsing="false" onAction="#subtraction" prefHeight="31.0" prefWidth="31.0" text="-" />
+      <Button fx:id="btnSubtraction1" layoutX="719.0" layoutY="270.0" mnemonicParsing="false" onAction="#multiplication" prefHeight="31.0" prefWidth="31.0" text="x" />
+      <Button fx:id="btnSubtraction11" layoutX="719.0" layoutY="226.0" mnemonicParsing="false" onAction="#division" prefHeight="31.0" prefWidth="31.0" text="÷" />
+      <Button fx:id="btnF" layoutX="82.0" layoutY="362.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="f" />
+      <Button layoutX="405.0" layoutY="300.0" mnemonicParsing="false" onAction="#CLX" prefHeight="31.0" prefWidth="57.0" text="CLX" />
     </children>
 </AnchorPane>

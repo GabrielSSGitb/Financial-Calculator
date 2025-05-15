@@ -8,7 +8,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
@@ -19,20 +18,30 @@ public class FXMLDocumentController implements Initializable {
     ArrayList<Integer> array = new ArrayList<>(); //Creating an arrayList
     private int result;
     private int history;
+    private int f = 0;
     //Apply JSON here!!
-    
-    
-    @FXML
-    private Label label;
+
     @FXML
     private TextField txtScreen;
+    @FXML
+    private void btnF(ActionEvent event) {
+        f = 1; 
+    /* If the variable equals 1 - and on CLX press = f helps to clean the input and array */
+    };
     @FXML
     private void handleButtonAction(ActionEvent event) {
         //Enter btn
         array.add(Integer.parseInt(txtScreen.getText()));
-        txtScreen.setText("0.00"); //Add 0.00 on btn again
-        
+        txtScreen.setText("");
     }
+    @FXML
+    private void CLX(ActionEvent event) {
+        if(f == 1) {
+            txtScreen.setText("0.00");
+            array.clear();
+            System.out.println(array);
+        };
+    };
     @FXML
     private void addUp(ActionEvent event) {
         //Addup calculating:
@@ -46,19 +55,44 @@ public class FXMLDocumentController implements Initializable {
     };
     @FXML
     private void subtraction(ActionEvent event) {
-        result = array.get(0);
-        array.remove(0);
+        result = array.get(0); //Get the first value of the array
+        array.remove(0); // Remove from the array the first value
         for(int i = 0; i < array.size(); i++) {
             result -= array.get(i);
         };
-        System.out.println(result);
+        array.clear();
+        array.add(result);
+        txtScreen.setText(Integer.toString(result));
+    };
+    @FXML
+    private void multiplication(ActionEvent event) {
+        //Multi
+        result = 1;
+        for(int i = 0; i < array.size(); i++) {
+            result *= array.get(i);
+        };
+        array.clear();
+        array.add(result);
+        txtScreen.setText(Integer.toString(result));
+    };
+    @FXML
+    private void division(ActionEvent event) {
+        //Divide
+        result = array.get(0);
+        array.remove(0);
+        for(int i = 0; i < array.size(); i++) {
+            result /= array.get(i);
+        }
+        array.clear();
+        array.add(result);
+        txtScreen.setText(Integer.toString(result));
     };
     @FXML
     private void btn(ActionEvent event) {
-       txtScreen.setText(""); //Clean Enter btn
        Button btn = (Button) event.getSource();
        String value = btn.getText(); // Get the text from the button
        txtScreen.appendText(value); // Show it on the screen
+       
     };
     
     @Override
