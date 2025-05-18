@@ -32,14 +32,13 @@ public class FXMLDocumentController implements Initializable {
     private void handleButtonAction(ActionEvent event) {
         //Enter btn
         array.add(Integer.parseInt(txtScreen.getText()));
-        txtScreen.setText("");
+        txtScreen.setText("0.00");
     }
     @FXML
     private void CLX(ActionEvent event) {
         if(f == 1) {
-            txtScreen.setText("0.00");
             array.clear();
-            System.out.println(array);
+            txtScreen.setText("0.00");
         };
     };
     @FXML
@@ -89,10 +88,14 @@ public class FXMLDocumentController implements Initializable {
     };
     @FXML
     private void btn(ActionEvent event) {
+       double txt = Double.parseDouble(txtScreen.getText());
+       if(txt == 0.00) {
+           txtScreen.setText("");
+           /* Conditional to update and set the text on the TextField */
+       }
        Button btn = (Button) event.getSource();
        String value = btn.getText(); // Get the text from the button
        txtScreen.appendText(value); // Show it on the screen
-       
     };
     
     @Override

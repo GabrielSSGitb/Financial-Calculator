@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" onDragDetected="#btn" prefHeight="428.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="financialcalculator.FXMLDocumentController">
     <children>
-      <TextField fx:id="txtScreen" alignment="CENTER_RIGHT" layoutX="52.0" layoutY="31.0" prefHeight="58.0" prefWidth="410.0" />
+      <TextField fx:id="txtScreen" alignment="CENTER_RIGHT" layoutX="52.0" layoutY="31.0" prefHeight="58.0" prefWidth="410.0" text="0.00" />
       <Button fx:id="btnAddup" layoutX="721.0" layoutY="362.0" mnemonicParsing="false" onAction="#addUp" text="+" />
       <Button layoutX="665.0" layoutY="362.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="∑+" />
       <Button fx:id="btnAddup1" layoutX="622.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="31.0" text="." />
