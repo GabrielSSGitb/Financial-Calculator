@@ -97,7 +97,6 @@ public class FXMLDocumentController implements Initializable {
        String value = btn.getText(); // Get the text from the button
        txtScreen.appendText(value); // Show it on the screen
     };
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
