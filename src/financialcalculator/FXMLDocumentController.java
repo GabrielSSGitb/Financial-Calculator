@@ -15,8 +15,8 @@ import javafx.scene.control.TextField;
  * @author gabri
  */
 public class FXMLDocumentController implements Initializable {
-    ArrayList<Integer> array = new ArrayList<>(); //Creating an arrayList
-    private int result;
+    ArrayList<Double> array = new ArrayList<>(); //Creating an arrayList
+    private double result;
     private int history;
     private int f = 0;
     //Apply JSON here!!
@@ -31,7 +31,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
         //Enter btn
-        array.add(Integer.parseInt(txtScreen.getText()));
+        array.add(Double.parseDouble(txtScreen.getText()));
         txtScreen.setText("0.00");
     }
     @FXML
@@ -50,7 +50,7 @@ public class FXMLDocumentController implements Initializable {
         };
         array.clear(); //Clean the array
         array.add(result); //Update value on the array
-        txtScreen.setText(Integer.toString(result));
+        txtScreen.setText(Double.toString(result));
     };
     @FXML
     private void subtraction(ActionEvent event) {
@@ -61,7 +61,7 @@ public class FXMLDocumentController implements Initializable {
         };
         array.clear();
         array.add(result);
-        txtScreen.setText(Integer.toString(result));
+        txtScreen.setText(Double.toString(result));
     };
     @FXML
     private void multiplication(ActionEvent event) {
@@ -72,7 +72,7 @@ public class FXMLDocumentController implements Initializable {
         };
         array.clear();
         array.add(result);
-        txtScreen.setText(Integer.toString(result));
+        txtScreen.setText(Double.toString(result));
     };
     @FXML
     private void division(ActionEvent event) {
@@ -84,7 +84,7 @@ public class FXMLDocumentController implements Initializable {
         }
         array.clear();
         array.add(result);
-        txtScreen.setText(Integer.toString(result));
+        txtScreen.setText(Double.toString(result));
     };
     @FXML
     private void btn(ActionEvent event) {
