@@ -1,6 +1,6 @@
-
 package financialcalculator;
 
+import FinancialClass.interest;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -85,6 +85,23 @@ public class FXMLDocumentController implements Initializable {
         array.clear();
         array.add(result);
         txtScreen.setText(Double.toString(result));
+    };
+    @FXML
+    private void interest(ActionEvent event) {
+        //Call the financial func.
+        interest fc = new interest(); //To get the financial class
+        Button btnf = (Button) event.getSource();
+        String btnfValue = btnf.getText(); //Get the function on the button
+        System.out.println(btnfValue);
+       /* if(btnfValue == "PV") {
+            System.out.println("PV");
+        }else if(btnfValue == "n") {
+            System.out.println("n");
+        }else if(btnfValue == "i") {
+            System.out.println("i");
+        }else {
+            System.out.println("FV");
+        }*/
     };
     @FXML
     private void btn(ActionEvent event) {
