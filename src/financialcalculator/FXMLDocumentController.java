@@ -19,6 +19,7 @@ public class FXMLDocumentController implements Initializable {
     private double result;
     private int history;
     private int f = 0;
+    private int index = 0;
     //Apply JSON here!!
 
     @FXML
@@ -92,16 +93,10 @@ public class FXMLDocumentController implements Initializable {
         interest fc = new interest(); //To get the financial class
         Button btnf = (Button) event.getSource();
         String btnfValue = btnf.getText(); //Get the function on the button
+        
         System.out.println(btnfValue);
-       /* if(btnfValue == "PV") {
-            System.out.println("PV");
-        }else if(btnfValue == "n") {
-            System.out.println("n");
-        }else if(btnfValue == "i") {
-            System.out.println("i");
-        }else {
-            System.out.println("FV");
-        }*/
+        System.out.println(txtScreen.getText());
+        txtScreen.setText("0.00");
     };
     @FXML
     private void btn(ActionEvent event) {
