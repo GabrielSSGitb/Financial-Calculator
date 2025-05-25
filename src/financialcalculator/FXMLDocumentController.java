@@ -19,7 +19,11 @@ public class FXMLDocumentController implements Initializable {
     private double result;
     private int history;
     private int f = 0;
-    private int index = 0;
+    //For financial calculations:
+    private Double i = 0.00;
+    private Double n = 0.00;
+    private Double pv = 0.00;
+    private Double fv = 0.00;
     //Apply JSON here!!
 
     @FXML
@@ -88,15 +92,28 @@ public class FXMLDocumentController implements Initializable {
         txtScreen.setText(Double.toString(result));
     };
     @FXML
-    private void interest(ActionEvent event) {
-        //Call the financial func.
-        interest fc = new interest(); //To get the financial class
-        Button btnf = (Button) event.getSource();
-        String btnfValue = btnf.getText(); //Get the function on the button
-        
-        System.out.println(btnfValue);
-        System.out.println(txtScreen.getText());
+    public void nbtn(ActionEvent event) {
+        n = Double.parseDouble(txtScreen.getText());
         txtScreen.setText("0.00");
+    };
+    @FXML
+    public void ibtn(ActionEvent event) {
+        i = Double.parseDouble(txtScreen.getText());
+        txtScreen.setText("0.00");
+    };
+    @FXML
+    public void pvbtn(ActionEvent event) {
+        pv = Double.parseDouble(txtScreen.getText());
+        txtScreen.setText("0.00");
+    };
+    @FXML
+    public void fvbtn(ActionEvent event) {
+        fv = Double.parseDouble(txtScreen.getText());
+        txtScreen.setText("0.00");
+        if(fv == 0.00) {
+            interest in = new interest();
+            txtScreen.setText(Double.toString(in.calculateAmount(n, i, pv))); //Put the result in the Screen
+        }
     };
     @FXML
     private void btn(ActionEvent event) {

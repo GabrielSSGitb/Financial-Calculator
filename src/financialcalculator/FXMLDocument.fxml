@@ -89,27 +89,27 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF2211112" layoutX="303.0" layoutY="163.0" mnemonicParsing="false" onAction="#interest" prefHeight="31.0" prefWidth="43.0" text="FV">
+      <Button fx:id="btnF2211112" layoutX="303.0" layoutY="163.0" mnemonicParsing="false" onAction="#fvbtn" prefHeight="31.0" prefWidth="43.0" text="FV">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF221112" layoutX="234.0" layoutY="163.0" mnemonicParsing="false" onAction="#interest" prefHeight="31.0" prefWidth="43.0" text="PMT">
+      <Button fx:id="btnF221112" layoutX="234.0" layoutY="163.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="PMT">
          <font>
             <Font size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnF22112" layoutX="164.0" layoutY="163.0" mnemonicParsing="false" onAction="#interest" prefHeight="31.0" prefWidth="43.0" text="PV">
+      <Button fx:id="btnF22112" layoutX="164.0" layoutY="163.0" mnemonicParsing="false" onAction="#pvbtn" prefHeight="31.0" prefWidth="43.0" text="PV">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF2212" layoutX="102.0" layoutY="163.0" mnemonicParsing="false" onAction="#interest" prefHeight="31.0" prefWidth="43.0" text="i">
+      <Button fx:id="btnF2212" layoutX="102.0" layoutY="163.0" mnemonicParsing="false" onAction="#ibtn" prefHeight="31.0" prefWidth="43.0" text="i">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF222" layoutX="31.0" layoutY="163.0" mnemonicParsing="false" onAction="#interest" prefHeight="31.0" prefWidth="43.0" text="n">
+      <Button fx:id="btnF222" layoutX="31.0" layoutY="163.0" mnemonicParsing="false" onAction="#nbtn" prefHeight="31.0" prefWidth="43.0" text="n">
          <font>
             <Font size="13.0" />
          </font>
