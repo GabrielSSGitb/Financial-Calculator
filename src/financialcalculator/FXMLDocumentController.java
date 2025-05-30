@@ -38,6 +38,8 @@ public class FXMLDocumentController implements Initializable {
         //Enter btn
         array.add(Double.parseDouble(txtScreen.getText()));
         txtScreen.setText("0.00");
+        System.out.println(array.toString());
+        
     }
     @FXML
     private void CLX(ActionEvent event) {
@@ -113,6 +115,7 @@ public class FXMLDocumentController implements Initializable {
         if(fv == 0.00) {
             interest in = new interest();
             txtScreen.setText(Double.toString(in.calculateAmount(n, i, pv))); //Put the result in the Screen
+            System.out.println(in.calculateAmount(n, i, pv));
         }
     };
     @FXML
@@ -126,6 +129,12 @@ public class FXMLDocumentController implements Initializable {
        String value = btn.getText(); // Get the text from the button
        txtScreen.appendText(value); // Show it on the screen
     };
+    @FXML
+    private void point(ActionEvent event) {
+        Button pointbtn = (Button) event.getSource();
+        String v = pointbtn.getText();
+        txtScreen.appendText(v);
+    } 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
