@@ -34,12 +34,9 @@ public class FXMLDocumentController implements Initializable {
     /* If the variable equals 1 - and on CLX press = f helps to clean the input and array */
     };
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        //Enter btn
+    private void Enter(ActionEvent event) {
         array.add(Double.parseDouble(txtScreen.getText()));
         txtScreen.setText("0.00");
-        System.out.println(array.toString());
-        
     }
     @FXML
     private void CLX(ActionEvent event) {
@@ -130,7 +127,8 @@ public class FXMLDocumentController implements Initializable {
        txtScreen.appendText(value); // Show it on the screen
     };
     @FXML
-    private void point(ActionEvent event) {
+    private void dot(ActionEvent event) {
+        //Put the point on decimal values in the textField
         Button pointbtn = (Button) event.getSource();
         String v = pointbtn.getText();
         txtScreen.appendText(v);

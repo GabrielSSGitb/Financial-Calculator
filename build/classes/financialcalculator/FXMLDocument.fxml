@@ -17,10 +17,10 @@
       <TextField fx:id="txtScreen" alignment="CENTER_RIGHT" layoutX="51.0" layoutY="29.0" prefHeight="58.0" prefWidth="410.0" text="0.00" />
       <Button fx:id="btnAddup" layoutX="616.0" layoutY="314.0" mnemonicParsing="false" onAction="#addUp" text="+" />
       <Button layoutX="560.0" layoutY="314.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="∑+" />
-      <Button fx:id="btnAddup1" layoutX="517.0" layoutY="314.0" mnemonicParsing="false" onAction="#point" prefHeight="31.0" prefWidth="31.0" text="." />
+      <Button fx:id="btnAddup1" layoutX="517.0" layoutY="314.0" mnemonicParsing="false" onAction="#dot" prefHeight="31.0" prefWidth="31.0" text="." />
       <Button fx:id="btnAddup11" layoutX="472.0" layoutY="314.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="0" />
       <Button fx:id="btn1" layoutX="472.0" layoutY="267.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="1" />
-      <Button layoutX="381.0" layoutY="251.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="94.0" prefWidth="57.0" text="Enter" />
+      <Button layoutX="381.0" layoutY="251.0" mnemonicParsing="false" onAction="#Enter" prefHeight="94.0" prefWidth="57.0" text="Enter" />
       <Button fx:id="btn11" layoutX="517.0" layoutY="267.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="2" />
       <Button fx:id="btn111" layoutX="566.0" layoutY="267.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="3" />
       <Button fx:id="btn1111" layoutX="472.0" layoutY="222.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="4" />
