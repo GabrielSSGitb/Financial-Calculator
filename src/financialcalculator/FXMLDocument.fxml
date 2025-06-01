@@ -14,7 +14,7 @@
     <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffdd6d" height="200.0" layoutX="-6.0" layoutY="-62.0" opacity="0.88" stroke="#00000070" strokeType="INSIDE" width="814.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000086" height="268.0" layoutX="-6.0" layoutY="138.0" opacity="0.88" stroke="#00000070" strokeType="INSIDE" width="814.0" />
-      <TextField fx:id="txtScreen" alignment="CENTER_RIGHT" layoutX="51.0" layoutY="29.0" prefHeight="58.0" prefWidth="410.0" text="0.00" />
+      <TextField fx:id="txtScreen" alignment="CENTER_RIGHT" layoutX="51.0" layoutY="29.0" prefHeight="58.0" prefWidth="410.0" text="0" />
       <Button fx:id="btnAddup" layoutX="616.0" layoutY="314.0" mnemonicParsing="false" onAction="#addUp" text="+" />
       <Button layoutX="560.0" layoutY="314.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="∑+" />
       <Button fx:id="btnAddup1" layoutX="517.0" layoutY="314.0" mnemonicParsing="false" onAction="#dot" prefHeight="31.0" prefWidth="31.0" text="." />
