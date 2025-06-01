@@ -12,112 +12,149 @@
 
 <AnchorPane id="AnchorPane" onDragDetected="#btn" prefHeight="388.0" prefWidth="673.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="financialcalculator.FXMLDocumentController">
     <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffdd6d" height="200.0" layoutX="-6.0" layoutY="-62.0" opacity="0.88" stroke="#00000070" strokeType="INSIDE" width="814.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000086" height="268.0" layoutX="-6.0" layoutY="138.0" opacity="0.88" stroke="#00000070" strokeType="INSIDE" width="814.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffdd6d" height="200.0" layoutX="-6.0" layoutY="-62.0" opacity="0.88" stroke="#00000070" strokeType="INSIDE" width="709.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000086" height="283.0" layoutX="-6.0" layoutY="138.0" opacity="0.88" stroke="#00000070" strokeType="INSIDE" width="709.0" />
       <TextField fx:id="txtScreen" alignment="CENTER_RIGHT" layoutX="51.0" layoutY="29.0" prefHeight="58.0" prefWidth="410.0" text="0" />
-      <Button fx:id="btnAddup" layoutX="616.0" layoutY="314.0" mnemonicParsing="false" onAction="#addUp" text="+" />
-      <Button layoutX="560.0" layoutY="314.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="∑+" />
-      <Button fx:id="btnAddup1" layoutX="517.0" layoutY="314.0" mnemonicParsing="false" onAction="#dot" prefHeight="31.0" prefWidth="31.0" text="." />
-      <Button fx:id="btnAddup11" layoutX="472.0" layoutY="314.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="0" />
-      <Button fx:id="btn1" layoutX="472.0" layoutY="267.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="1" />
-      <Button layoutX="381.0" layoutY="251.0" mnemonicParsing="false" onAction="#Enter" prefHeight="94.0" prefWidth="57.0" text="Enter" />
-      <Button fx:id="btn11" layoutX="517.0" layoutY="267.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="2" />
-      <Button fx:id="btn111" layoutX="566.0" layoutY="267.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="3" />
-      <Button fx:id="btn1111" layoutX="472.0" layoutY="222.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="4" />
-      <Button fx:id="btn11111" layoutX="517.0" layoutY="222.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="5" />
-      <Button fx:id="btn111111" layoutX="566.0" layoutY="222.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="6" />
-      <Button fx:id="btn1111111" layoutX="472.0" layoutY="178.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="7" />
-      <Button fx:id="btn11111111" layoutX="517.0" layoutY="178.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="8" />
-      <Button fx:id="btn111111111" layoutX="566.0" layoutY="178.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="9" />
-      <Button fx:id="btnSubtraction" layoutX="614.0" layoutY="267.0" mnemonicParsing="false" onAction="#subtraction" prefHeight="31.0" prefWidth="31.0" text="-" />
-      <Button fx:id="btnSubtraction1" layoutX="614.0" layoutY="222.0" mnemonicParsing="false" onAction="#multiplication" prefHeight="31.0" prefWidth="31.0" text="x" />
-      <Button fx:id="btnSubtraction11" layoutX="614.0" layoutY="178.0" mnemonicParsing="false" onAction="#division" prefHeight="31.0" prefWidth="31.0" text="÷" />
-      <Button fx:id="btnF" layoutX="97.0" layoutY="299.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="f" />
-      <Button layoutX="300.0" layoutY="252.0" mnemonicParsing="false" onAction="#CLX" prefHeight="31.0" prefWidth="57.0" text="CLX" />
-      <Button fx:id="btnF1" layoutX="159.0" layoutY="299.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="g" />
-      <Button layoutX="300.0" layoutY="299.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="57.0" text="RCL" />
-      <Button layoutX="224.0" layoutY="299.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="57.0" text="STO" />
-      <ImageView fitHeight="84.0" fitWidth="105.0" layoutX="616.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="btnAddup" layoutX="593.0" layoutY="359.0" mnemonicParsing="false" onAction="#addUp" text="+" />
+      <Button layoutX="537.0" layoutY="359.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="∑+" />
+      <Button fx:id="btnAddup1" layoutX="494.0" layoutY="359.0" mnemonicParsing="false" onAction="#dot" prefHeight="31.0" prefWidth="31.0" text="." />
+      <Button fx:id="btnAddup11" layoutX="449.0" layoutY="359.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="0" />
+      <Button fx:id="btn1" layoutX="451.0" layoutY="297.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="1" />
+      <Button layoutX="360.0" layoutY="314.0" mnemonicParsing="false" onAction="#Enter" prefHeight="94.0" prefWidth="57.0" text="Enter" />
+      <Button fx:id="btn11" layoutX="496.0" layoutY="297.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="2" />
+      <Button fx:id="btn111" layoutX="545.0" layoutY="297.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="3" />
+      <Button fx:id="btn1111" layoutX="451.0" layoutY="235.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="4" />
+      <Button fx:id="btn11111" layoutX="496.0" layoutY="235.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="5" />
+      <Button fx:id="btn111111" layoutX="545.0" layoutY="235.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="6" />
+      <Button fx:id="btn1111111" layoutX="451.0" layoutY="176.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="7" />
+      <Button fx:id="btn11111111" layoutX="496.0" layoutY="176.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="8" />
+      <Button fx:id="btn111111111" layoutX="545.0" layoutY="176.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="9" />
+      <Button fx:id="btnSubtraction" layoutX="593.0" layoutY="297.0" mnemonicParsing="false" onAction="#subtraction" prefHeight="31.0" prefWidth="31.0" text="-" />
+      <Button fx:id="btnSubtraction1" layoutX="593.0" layoutY="235.0" mnemonicParsing="false" onAction="#multiplication" prefHeight="31.0" prefWidth="31.0" text="x" />
+      <Button fx:id="btnSubtraction11" layoutX="593.0" layoutY="176.0" mnemonicParsing="false" onAction="#division" prefHeight="31.0" prefWidth="31.0" text="÷" />
+      <Button fx:id="btnF" layoutX="85.0" layoutY="376.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="f" />
+      <Button layoutX="288.0" layoutY="330.0" mnemonicParsing="false" onAction="#CLX" prefHeight="31.0" prefWidth="57.0" text="CLX" />
+      <Button fx:id="btnF1" layoutX="147.0" layoutY="376.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="g" />
+      <Button layoutX="288.0" layoutY="376.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="57.0" text="RCL" />
+      <Button layoutX="212.0" layoutY="376.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="57.0" text="STO" />
+      <ImageView fitHeight="84.0" fitWidth="105.0" layoutX="574.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Logo.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnF11" layoutX="31.0" layoutY="299.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="ON" />
-      <Button fx:id="btnF2" layoutX="31.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="R/S" />
-      <Button fx:id="btnF21" layoutX="97.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="SST">
+      <Button fx:id="btnF11" layoutX="19.0" layoutY="376.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="ON" />
+      <Button fx:id="btnF2" layoutX="19.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="R/S" />
+      <Button fx:id="btnF21" layoutX="85.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="SST">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF211" layoutX="159.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="R">
+      <Button fx:id="btnF211" layoutX="147.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="R">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF2111" layoutX="224.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="57.0" text="X&lt;&gt;Y">
+      <Button fx:id="btnF2111" layoutX="212.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="57.0" text="X&lt;&gt;Y">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF22" layoutX="31.0" layoutY="207.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="y^x">
+      <Button fx:id="btnF22" layoutX="21.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="y^x">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF221" layoutX="102.0" layoutY="207.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="1/x">
+      <Button fx:id="btnF221" layoutX="92.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="1/x">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF2211" layoutX="164.0" layoutY="207.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="\%T">
+      <Button fx:id="btnF2211" layoutX="154.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="\%T">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF22111" layoutX="234.0" layoutY="207.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="Δ %">
+      <Button fx:id="btnF22111" layoutX="224.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="Δ %">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF221111" layoutX="303.0" layoutY="207.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="\%">
+      <Button fx:id="btnF221111" layoutX="293.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="\%">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF2211111" layoutX="370.0" layoutY="207.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="EEX">
+      <Button fx:id="btnF2211111" layoutX="360.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="EEX">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF2211112" layoutX="303.0" layoutY="163.0" mnemonicParsing="false" onAction="#fvbtn" prefHeight="31.0" prefWidth="43.0" text="FV">
+      <Button fx:id="btnF2211112" layoutX="292.0" layoutY="178.0" mnemonicParsing="false" onAction="#fvbtn" prefHeight="31.0" prefWidth="43.0" text="FV">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF221112" layoutX="234.0" layoutY="163.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="PMT">
+      <Button fx:id="btnF221112" layoutX="223.0" layoutY="178.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="PMT">
          <font>
             <Font size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnF22112" layoutX="164.0" layoutY="163.0" mnemonicParsing="false" onAction="#pvbtn" prefHeight="31.0" prefWidth="43.0" text="PV">
+      <Button fx:id="btnF22112" layoutX="153.0" layoutY="178.0" mnemonicParsing="false" onAction="#pvbtn" prefHeight="31.0" prefWidth="43.0" text="PV">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF2212" layoutX="102.0" layoutY="163.0" mnemonicParsing="false" onAction="#ibtn" prefHeight="31.0" prefWidth="43.0" text="i">
+      <Button fx:id="btnF2212" layoutX="91.0" layoutY="178.0" mnemonicParsing="false" onAction="#ibtn" prefHeight="31.0" prefWidth="43.0" text="i">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF222" layoutX="31.0" layoutY="163.0" mnemonicParsing="false" onAction="#nbtn" prefHeight="31.0" prefWidth="43.0" text="n">
+      <Button fx:id="btnF222" layoutX="20.0" layoutY="178.0" mnemonicParsing="false" onAction="#nbtn" prefHeight="31.0" prefWidth="43.0" text="n">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF22111121" layoutX="370.0" layoutY="163.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="CHS">
+      <Button fx:id="btnF22111121" layoutX="359.0" layoutY="178.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="CHS">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
+      <Label layoutX="22.0" layoutY="150.0" text="Amort" textFill="#ff8e00" />
+      <Label layoutX="101.0" layoutY="150.0" text="INT" textFill="#ff8e00" />
+      <Label layoutX="163.0" layoutY="150.0" text="NPV" textFill="#ff8e00" />
+      <Label layoutX="230.0" layoutY="150.0" text="RND" textFill="#ff8e00" />
+      <Label layoutX="305.0" layoutY="150.0" text="IRR" textFill="#ff8e00" />
+      <Label layoutX="24.0" layoutY="212.0" text="_________Bond________" textFill="#ff8e00">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="227.0" text="PRICE" textFill="#ff8e00" />
+      <Label layoutX="98.0" layoutY="227.0" text="YTM" textFill="#ff8e00" />
+      <Label layoutX="225.0" layoutY="212.0" text="_____DEPRECIATION_____" textFill="#ff8e00">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="166.0" layoutY="227.0" text="SL" textFill="#ff8e00" />
+      <Label layoutX="306.0" layoutY="227.0" text="DB" textFill="#ff8e00" />
+      <Label layoutX="226.0" layoutY="227.0" text="SOYD" textFill="#ff8e00" />
+      <Label layoutX="32.0" layoutY="298.0" text="R/S" textFill="#ff8e00" />
+      <Label layoutX="103.0" layoutY="298.0" text="Σ" textFill="#ff8e00" />
+      <Label layoutX="148.0" layoutY="298.0" text="PRGM" textFill="#ff8e00" />
+      <Label layoutX="228.0" layoutY="290.0" text="CLEAR" textFill="#ff8e00">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="233.0" layoutY="309.0" text="FIN" textFill="#ff8e00" />
+      <Label layoutX="303.0" layoutY="299.0" text="REG" textFill="#ff8e00" />
+      <Label layoutX="372.0" layoutY="293.0" text="PREFIX" textFill="#ff8e00">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="75.0" layoutY="280.0" text="_______________________" textFill="#ff8e00" />
+      <Label layoutX="276.0" layoutY="280.0" text="_____________" textFill="#ff8e00" />
     </children>
 </AnchorPane>
