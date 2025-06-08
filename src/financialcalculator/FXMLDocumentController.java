@@ -1,6 +1,7 @@
 package financialcalculator;
 
 import FinancialClass.interest;
+import MathFunctions.FuncoesMatematica;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -15,41 +16,56 @@ import javafx.scene.control.TextField;
  * @author gabri
  */
 public class FXMLDocumentController implements Initializable {
-
+    //Values saving and variables declarations:
     ArrayList<Double> array = new ArrayList<>(); //Creating an arrayList
     private double result;
-    private int history;
     private int f = 0;
+    private int g = 0;
+    private int oneByX = 0;
+    private int expo = 0;
     //For financial calculations:
     private Double i = 0.00;
     private Double n = 0.00;
     private Double pv = 0.00;
     private Double fv = 0.00;
-
+    
+    //FXML imports:
     @FXML
     private TextField txtScreen;
 
+    //F and G functions:
     @FXML
     private void btnF(ActionEvent event) {
         f = 1;
         /* If the variable equals 1 - and on CLX press = f helps to clean the input and array */
     }
-
+    @FXML
+    private void btnG(ActionEvent event) {
+        g = 1;
+        /* To informe if the g function is being used */
+    }
+    @FXML
+    private void btnOn(ActionEvent event) {
+            array.clear();
+            txtScreen.setText("0");
+    }
+    //Enter BTN:
     ;
     @FXML
     private void Enter(ActionEvent event) {
         array.add(Double.parseDouble(txtScreen.getText()));
         txtScreen.setText("0");
     }
-
+    //CLX Funtion BTN:
     @FXML
     private void CLX(ActionEvent event) {
         if (f == 1) {
             array.clear();
             txtScreen.setText("0");
+            f = 0;
         };
     }
-
+    //Basic calculations:
     ;
     @FXML
     private void addUp(ActionEvent event) {
@@ -102,7 +118,7 @@ public class FXMLDocumentController implements Initializable {
         array.add(result);
         txtScreen.setText(Double.toString(result));
     }
-
+    //Passing money interest information:
     ;
     @FXML
     public void nbtn(ActionEvent event) {
@@ -147,7 +163,7 @@ public class FXMLDocumentController implements Initializable {
             txtScreen.setText(in.calculateAmount(n, i, pv)); //Put the result in the Screen
         }
     }
-
+    //Calculator btn´s Functions:
     ;
     @FXML
     private void btn(ActionEvent event) {
@@ -170,7 +186,53 @@ public class FXMLDocumentController implements Initializable {
             txtScreen.appendText(".");
         }
     }
-
+    @FXML
+     private void exponencial(ActionEvent event) {
+        FuncoesMatematica funcoes = new FuncoesMatematica();
+        exponencialWithReverse();
+        if(g == 0) {
+            funcoes.adicionarOperacao("^");
+            funcoes.adicionarNumero(array.get(0)); //Base
+            funcoes.adicionarNumero(array.get(1)); // Expoente
+            funcoes.calcular();
+            array.clear(); //Clean the old values if it has values on it
+            txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
+            array.add(funcoes.getResultado()); // add the result on the main array
+            
+        }else if(g == 1) {
+            funcoes.adicionarOperacao("√"); //Inform operation
+            funcoes.adicionarNumero(array.get(0)); //Pass the value
+            funcoes.calcular();
+            array.clear(); //Clean the old values if it has values on it
+            txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
+            array.add(funcoes.getResultado()); // add the result on the main array
+        }
+    }
+     @FXML
+        private void btn1ByX(ActionEvent event) {
+         FuncoesMatematica funcoes = new FuncoesMatematica();
+         funcoes.adicionarNumero(array.get(0));
+         funcoes.adicionarNumero(array.get(1));
+         funcoes.adicionarOperacao("numx");
+         funcoes.calcular();
+         array.clear();
+         txtScreen.setText(Double.toString(funcoes.getResultado()));
+         array.add(funcoes.getResultado());
+         oneByX = 1; /* Indicates that the 1/x btn is on!!! */
+         System.out.println(oneByX);
+     }
+    @FXML
+     public void exponencialWithReverse() {
+        FuncoesMatematica funcoes = new FuncoesMatematica();
+        expo = 1;
+        if(expo == 1 && oneByX == 1) {
+            funcoes.adicionarOperacao("1/x");
+            //funcoes.adicionarNumero(array.get(0));
+            funcoes.calcular();
+        }else {
+            System.out.println("Nopppp!");
+        }
+     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

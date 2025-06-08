@@ -34,7 +34,7 @@
       <Button fx:id="btnSubtraction11" layoutX="593.0" layoutY="176.0" mnemonicParsing="false" onAction="#division" prefHeight="31.0" prefWidth="31.0" text="÷" />
       <Button fx:id="btnF" layoutX="85.0" layoutY="376.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="f" />
       <Button layoutX="288.0" layoutY="330.0" mnemonicParsing="false" onAction="#CLX" prefHeight="31.0" prefWidth="57.0" text="CLX" />
-      <Button fx:id="btnF1" layoutX="147.0" layoutY="376.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="g" />
+      <Button fx:id="btnF1" layoutX="147.0" layoutY="376.0" mnemonicParsing="false" onAction="#btnG" prefHeight="31.0" prefWidth="43.0" text="g" />
       <Button layoutX="288.0" layoutY="376.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="57.0" text="RCL" />
       <Button layoutX="212.0" layoutY="376.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="57.0" text="STO" />
       <ImageView fitHeight="84.0" fitWidth="105.0" layoutX="574.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
@@ -42,7 +42,7 @@
             <Image url="@../images/Logo.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnF11" layoutX="19.0" layoutY="376.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="ON" />
+      <Button fx:id="btnF11" layoutX="19.0" layoutY="376.0" mnemonicParsing="false" onAction="#btnOn" prefHeight="31.0" prefWidth="43.0" text="ON" />
       <Button fx:id="btnF2" layoutX="19.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="R/S" />
       <Button fx:id="btnF21" layoutX="85.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="SST">
          <font>
@@ -59,12 +59,12 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF22" layoutX="21.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="y^x">
+      <Button fx:id="btnF22" layoutX="21.0" layoutY="252.0" mnemonicParsing="false" onAction="#exponencial" prefHeight="31.0" prefWidth="43.0" text="y^x">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF221" layoutX="92.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="1/x">
+      <Button fx:id="btnF221" layoutX="92.0" layoutY="252.0" mnemonicParsing="false" onAction="#btn1ByX" prefHeight="31.0" prefWidth="43.0" text="1/x">
          <font>
             <Font size="13.0" />
          </font>
