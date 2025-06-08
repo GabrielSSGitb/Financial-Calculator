@@ -25,7 +25,6 @@ public class FXMLDocumentController implements Initializable {
     private Double n = 0.00;
     private Double pv = 0.00;
     private Double fv = 0.00;
-    //Apply JSON here!!
 
     @FXML
     private TextField txtScreen;
@@ -109,6 +108,10 @@ public class FXMLDocumentController implements Initializable {
     public void nbtn(ActionEvent event) {
         n = Double.parseDouble(txtScreen.getText());
         txtScreen.setText("0");
+        if(n == 0) {
+            interest in = new interest();
+            txtScreen.setText(in.calculateAmort(pv,i,fv));
+        }
     }
 
     ;
@@ -116,19 +119,30 @@ public class FXMLDocumentController implements Initializable {
     public void ibtn(ActionEvent event) {
         i = Double.parseDouble(txtScreen.getText());
         txtScreen.setText("0");
+        if (i == 0) {
+            interest in = new interest();
+            txtScreen.setText(in.calculateTax(fv, pv, n)); //Put the result in the Screen
+        }
     }
 
     ;
     @FXML
     public void pvbtn(ActionEvent event) {
-        pv = Double.parseDouble(txtScreen.getText());
-        txtScreen.setText("0");
+       pv = Double.parseDouble(txtScreen.getText());
+       txtScreen.setText("0");
+       if (pv == 0) {
+            interest in = new interest();
+            txtScreen.setText(in.calculatePV(n,i,fv)); //Put the result in the Screen
+        }
+       
     }
 
     ;
     @FXML
     public void fvbtn(ActionEvent event) {
-        if (txtScreen.getText().contains("0")) {
+        fv = Double.parseDouble(txtScreen.getText());
+        txtScreen.setText("0");
+        if (fv == 0) {
             interest in = new interest();
             txtScreen.setText(in.calculateAmount(n, i, pv)); //Put the result in the Screen
         }
