@@ -69,7 +69,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF2211" layoutX="154.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="\%T">
+      <Button fx:id="btnF2211" layoutX="154.0" layoutY="252.0" mnemonicParsing="false" onAction="#TotalPercentage" prefHeight="31.0" prefWidth="43.0" text="\%T">
          <font>
             <Font size="13.0" />
          </font>

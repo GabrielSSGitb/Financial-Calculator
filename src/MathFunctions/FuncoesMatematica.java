@@ -29,7 +29,12 @@ public class FuncoesMatematica {
         }else if(operacoes.get(0).contains("numx")) {
             resultado = 1/numeros.get(1);
         }else if(operacoes.get(0).contains("1/x")) {
-            System.out.println("Ok!!");
+            System.out.println(numeros.toString());
+            resultado = Math.pow(numeros.get(0), numeros.get(1));
+        }else if(operacoes.get(0).contains("e")) {
+            resultado = Math.pow(Math.E, numeros.get(0));
+        }else if(operacoes.get(0).contains("ln")) {
+            resultado = Math.log(numeros.get(0));
         }
 
         /*for (int i = 0; i < operacoes.size(); i++) {
@@ -126,4 +131,4 @@ public class FuncoesMatematica {
         for (int i = 2; i <= n; i++) fat *= i;
         return fat;
     }
-}
+    }

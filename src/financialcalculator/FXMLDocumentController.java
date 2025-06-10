@@ -21,8 +21,6 @@ public class FXMLDocumentController implements Initializable {
     private double result;
     private int f = 0;
     private int g = 0;
-    private int oneByX = 0;
-    private int expo = 0;
     //For financial calculations:
     private Double i = 0.00;
     private Double n = 0.00;
@@ -189,49 +187,60 @@ public class FXMLDocumentController implements Initializable {
     @FXML
      private void exponencial(ActionEvent event) {
         FuncoesMatematica funcoes = new FuncoesMatematica();
-        exponencialWithReverse();
-        if(g == 0) {
+        if(Double.parseDouble(txtScreen.getText()) != 0) {
+            funcoes.adicionarOperacao("1/x");
+            funcoes.adicionarNumero(array.get(0)); //get the fist value
+            funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText())); //Get the othe value on the txtField
+            funcoes.calcular();
+            txtScreen.setText(Double.toString(funcoes.getResultado()));
+        }else if(g == 0) {
             funcoes.adicionarOperacao("^");
             funcoes.adicionarNumero(array.get(0)); //Base
-            funcoes.adicionarNumero(array.get(1)); // Expoente
+            funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText())); // Expoente
             funcoes.calcular();
-            array.clear(); //Clean the old values if it has values on it
-            txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
+            //txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
             array.add(funcoes.getResultado()); // add the result on the main array
             
         }else if(g == 1) {
             funcoes.adicionarOperacao("√"); //Inform operation
-            funcoes.adicionarNumero(array.get(0)); //Pass the value
+            funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText())); //Pass the value
             funcoes.calcular();
-            array.clear(); //Clean the old values if it has values on it
             txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
             array.add(funcoes.getResultado()); // add the result on the main array
+            System.out.println(array.toString());
         }
     }
      @FXML
         private void btn1ByX(ActionEvent event) {
          FuncoesMatematica funcoes = new FuncoesMatematica();
-         funcoes.adicionarNumero(array.get(0));
-         funcoes.adicionarNumero(array.get(1));
-         funcoes.adicionarOperacao("numx");
-         funcoes.calcular();
-         array.clear();
-         txtScreen.setText(Double.toString(funcoes.getResultado()));
-         array.add(funcoes.getResultado());
-         oneByX = 1; /* Indicates that the 1/x btn is on!!! */
-         System.out.println(oneByX);
+            if(g == 1) {
+                /* To calculate the Euler´s exponential (e^x)*/
+                funcoes.adicionarOperacao("e");
+                funcoes.adicionarNumero(array.get(0));
+                funcoes.calcular();
+                txtScreen.setText(Double.toString(funcoes.getResultado()));
+            }else {
+                /*To calculate the (1/x): */
+                funcoes.adicionarNumero(array.get(0));
+                funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText()));
+                funcoes.adicionarOperacao("numx");
+                funcoes.calcular();
+                txtScreen.setText(Double.toString(funcoes.getResultado()));
+                array.add(funcoes.getResultado());
+             }
      }
-    @FXML
-     public void exponencialWithReverse() {
-        FuncoesMatematica funcoes = new FuncoesMatematica();
-        expo = 1;
-        if(expo == 1 && oneByX == 1) {
-            funcoes.adicionarOperacao("1/x");
-            //funcoes.adicionarNumero(array.get(0));
-            funcoes.calcular();
-        }else {
-            System.out.println("Nopppp!");
-        }
+     @FXML
+     private void TotalPercentage(ActionEvent event) {
+         /* To calculate Neperian Logarithm and use the %T button*/
+         FuncoesMatematica funcoes = new FuncoesMatematica();
+         if(g == 1) {
+             funcoes.adicionarOperacao("ln");
+             funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText()));
+             funcoes.calcular();
+             txtScreen.setText(Double.toString(funcoes.getResultado()));
+         }else {
+             System.out.println("%T");
+         }
      }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
