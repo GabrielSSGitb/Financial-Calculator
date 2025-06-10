@@ -58,10 +58,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void CLX(ActionEvent event) {
         if (f == 1) {
-            array.clear();
+            array.clear(); //Clean memory on the calculator
             txtScreen.setText("0");
             f = 0;
-        };
+        }else {
+            txtScreen.setText(""); //Clean only the textfield
+        }
     }
     //Basic calculations:
     ;
