@@ -35,6 +35,8 @@ public class FuncoesMatematica {
             resultado = Math.pow(Math.E, numeros.get(0));
         }else if(operacoes.get(0).contains("ln")) {
             resultado = Math.log(numeros.get(0));
+        }else if(operacoes.get(0).contains("CHS")) {
+            resultado = -numeros.get(0);
         }
 
         /*for (int i = 0; i < operacoes.size(); i++) {

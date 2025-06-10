@@ -114,7 +114,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF22111121" layoutX="359.0" layoutY="178.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="43.0" text="CHS">
+      <Button fx:id="btnF22111121" layoutX="359.0" layoutY="178.0" mnemonicParsing="false" onAction="#CHS" prefHeight="31.0" prefWidth="43.0" text="CHS">
          <font>
             <Font size="13.0" />
          </font>

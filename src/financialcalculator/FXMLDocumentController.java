@@ -186,6 +186,20 @@ public class FXMLDocumentController implements Initializable {
             txtScreen.appendText(".");
         }
     }
+    //Math functions:
+    @FXML
+    private void CHS(ActionEvent event) {
+        /* To put negative numbers on the calculator */
+        if(txtScreen.getText().equals("") || txtScreen.getText().equals("0") || txtScreen.getText().equals("0.00")) {
+            txtScreen.setText("Error - no use");
+        }else {
+            FuncoesMatematica funcoes = new FuncoesMatematica();
+            funcoes.adicionarOperacao("CHS");
+            funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText()));
+            funcoes.calcular();
+            txtScreen.setText(Double.toString(funcoes.getResultado()));
+        }
+    }
     @FXML
      private void exponencial(ActionEvent event) {
         FuncoesMatematica funcoes = new FuncoesMatematica();
