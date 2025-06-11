@@ -236,8 +236,7 @@ public class FXMLDocumentController implements Initializable {
             funcoes.adicionarNumero(array.get(0)); //Base
             funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText())); // Expoente
             funcoes.calcular();
-            //txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
-            array.add(funcoes.getResultado()); // add the result on the main array
+            txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
             
         }else if(g == 1) {
             funcoes.adicionarOperacao("√"); //Inform operation
@@ -245,7 +244,6 @@ public class FXMLDocumentController implements Initializable {
             funcoes.calcular();
             txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
             array.add(funcoes.getResultado()); // add the result on the main array
-            System.out.println(array.toString());
             lbPrefix.setText("");
         }
     }

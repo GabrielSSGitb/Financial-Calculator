@@ -22,109 +22,28 @@ public class FuncoesMatematica {
         }
 
         resultado = numeros.get(0);
+        //To verify with function it must do:
         if(operacoes.get(0).contains("√")) {
-            resultado = Math.sqrt(resultado);
+            resultado = Math.sqrt(resultado); //SQRT
         }else if(operacoes.get(0).contains("^")) {
-            resultado = Math.pow(resultado, numeros.get(1));
+            resultado = Math.pow(resultado, numeros.get(1)); //Exponential
         }else if(operacoes.get(0).contains("numx")) {
-            resultado = 1/numeros.get(1);
+            resultado = 1/numeros.get(1); // 1/x where g = 1
         }else if(operacoes.get(0).contains("1/x")) {
-            System.out.println(numeros.toString());
-            resultado = Math.pow(numeros.get(0), numeros.get(1));
+            resultado = Math.pow(numeros.get(0), numeros.get(1)); // 1/x
         }else if(operacoes.get(0).contains("e")) {
-            resultado = Math.pow(Math.E, numeros.get(0));
+            resultado = Math.pow(Math.E, numeros.get(0)); //e^x
         }else if(operacoes.get(0).contains("ln")) {
-            resultado = Math.log(numeros.get(0));
+            resultado = Math.log(numeros.get(0)); //ln and logs
         }else if(operacoes.get(0).contains("CHS")) {
             resultado = -numeros.get(0);
         }else if(operacoes.get(0).contains("n!")) {
+            /* To calculate fatorial expressions:*/
             if (resultado < 0 || resultado != Math.floor(resultado))
                         throw new ArithmeticException("Fatorial de número negativo ou não inteiro");
             resultado = fatorial((int) resultado);
         }
-
-        /*for (int i = 0; i < operacoes.size(); i++) {
-            double proximoNumero = i + 1 < numeros.size() ? numeros.get(i + 1) : 0;
-            String op = operacoes.get(i);
-
-            switch (op) {
-                case "+":
-                    resultado += proximoNumero;
-                    break;
-                case "-":
-                    resultado -= proximoNumero;
-                    break;
-                case "*":
-                    resultado *= proximoNumero;
-                    break;
-                case "/":
-                    if (proximoNumero != 0)
-                        resultado /= proximoNumero;
-                    else
-                        throw new ArithmeticException("Divisão por zero");
-                    break;
-                case "^":
-                    resultado = Math.pow(resultado, proximoNumero);
-                    break;
-                case "√":
-                    resultado = Math.sqrt(resultado);
-                    break;
-                case "1/x":
-                    if (resultado != 0)
-                        resultado = 1 / resultado;
-                    else
-                        throw new ArithmeticException("Divisão por zero");
-                    break;
-                case "10^x":
-                    resultado = Math.pow(10, resultado);
-                    break;
-                case "e^x":
-                    resultado = Math.exp(resultado);
-                    break;
-                case "ln":
-                    if (resultado > 0)
-                        resultado = Math.log(resultado);
-                    else
-                        throw new ArithmeticException("ln de número não positivo");
-                    break;
-                case "log":
-                    if (resultado > 0)
-                        resultado = Math.log10(resultado);
-                    else
-                        throw new ArithmeticException("log de número não positivo");
-                    break;
-                case "x²":
-                    resultado = resultado * resultado;
-                    break;
-                case "CHS":
-                    resultado = -resultado;
-                    break;
-                case "n!":
-                    if (resultado < 0 || resultado != Math.floor(resultado))
-                        throw new ArithmeticException("Fatorial de número negativo ou não inteiro");
-                    resultado = fatorial((int) resultado);
-                    break;
-                case "π":
-                    resultado = Math.PI;
-                    break;
-                case "EEX": 
-                    resultado = resultado * Math.pow(10, proximoNumero);
-                    break;
-                case "x↔y":
-                    if (numeros.size() >= 2) {
-                        double temp = numeros.get(i);
-                        numeros.set(i, numeros.get(i + 1));
-                        numeros.set(i + 1, temp);
-                        resultado = numeros.get(i);
-                    }
-                    break;
-                default:
-                    throw new IllegalArgumentException("Operação inválida: " + op);
-            }
-        }
-
-        numeros.clear();
-        operacoes.clear();*/
+        /* Adicionar a função x<>y na hora de implementar os metodos da Tabela Price */
     }
 
     public double getResultado() {
