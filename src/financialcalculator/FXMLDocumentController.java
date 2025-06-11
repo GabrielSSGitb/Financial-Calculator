@@ -22,6 +22,7 @@ public class FXMLDocumentController implements Initializable {
     private double result;
     private int f = 0;
     private int g = 0;
+    private double decimalCasesQTD = 0.00;
     //For financial calculations:
     private Double i = 0.00;
     private Double n = 0.00;
@@ -226,12 +227,14 @@ public class FXMLDocumentController implements Initializable {
      private void exponencial(ActionEvent event) {
         FuncoesMatematica funcoes = new FuncoesMatematica();
         if(Double.parseDouble(txtScreen.getText()) != 0) {
+            /*To calculate the inverse of a number and use exponencial on the result: */
             funcoes.adicionarOperacao("1/x");
             funcoes.adicionarNumero(array.get(0)); //get the fist value
             funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText())); //Get the othe value on the txtField
             funcoes.calcular();
             txtScreen.setText(Double.toString(funcoes.getResultado()));
-        }else if(g == 0) {
+        }else 
+        if(g == 0) {
             funcoes.adicionarOperacao("^");
             funcoes.adicionarNumero(array.get(0)); //Base
             funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText())); // Expoente
