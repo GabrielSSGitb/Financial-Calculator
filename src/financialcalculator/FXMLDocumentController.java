@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
@@ -30,16 +31,20 @@ public class FXMLDocumentController implements Initializable {
     //FXML imports:
     @FXML
     private TextField txtScreen;
+    @FXML
+    private Label lbPrefix;
 
-    //F and G functions:
+    //Basic functions:
     @FXML
     private void btnF(ActionEvent event) {
         f = 1;
+        lbPrefix.setText("f");
         /* If the variable equals 1 - and on CLX press = f helps to clean the input and array */
     }
     @FXML
     private void btnG(ActionEvent event) {
         g = 1;
+        lbPrefix.setText("g");
         /* To informe if the g function is being used */
     }
     @FXML
@@ -53,6 +58,13 @@ public class FXMLDocumentController implements Initializable {
     private void Enter(ActionEvent event) {
         array.add(Double.parseDouble(txtScreen.getText()));
         txtScreen.setText("0");
+        if(g == 1 && f == 1) {
+            /*Cleans the prefix´s selection in case of wrong pressing*/
+            f = 0;
+            g = 0;
+            lbPrefix.setText("");
+            lbPrefix.setText("");
+        }
     }
     //CLX Funtion BTN:
     @FXML
@@ -60,9 +72,33 @@ public class FXMLDocumentController implements Initializable {
         if (f == 1) {
             array.clear(); //Clean memory on the calculator
             txtScreen.setText("0");
+            lbPrefix.setText("");
             f = 0;
         }else {
             txtScreen.setText(""); //Clean only the textfield
+        }
+    }
+    //Calculator btn´s Functions:
+    ;
+    @FXML
+    private void btn(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        String value = btn.getText();
+        String current = txtScreen.getText();
+        
+        if (current.equals("0")) {
+            txtScreen.setText(value); // Changes the initial 0
+        } else {
+            txtScreen.appendText(value);
+        }
+        if(value.equals("3") && g == 1) {
+            /* To calculate fatorial expressions */
+            FuncoesMatematica funcoes = new FuncoesMatematica();
+            funcoes.adicionarOperacao("n!");
+            funcoes.adicionarNumero(array.get(0));
+            funcoes.calcular();
+            txtScreen.setText(Double.toString(funcoes.getResultado()));
+            lbPrefix.setText("");
         }
     }
     //Basic calculations:
@@ -163,20 +199,6 @@ public class FXMLDocumentController implements Initializable {
             txtScreen.setText(in.calculateAmount(n, i, pv)); //Put the result in the Screen
         }
     }
-    //Calculator btn´s Functions:
-    ;
-    @FXML
-    private void btn(ActionEvent event) {
-        Button btn = (Button) event.getSource();
-        String value = btn.getText();
-        String current = txtScreen.getText();
-        
-        if (current.equals("0")) {
-            txtScreen.setText(value); // Changes the initial 0
-        } else {
-            txtScreen.appendText(value);
-        }
-    }
 
     ;
     @FXML
@@ -224,6 +246,7 @@ public class FXMLDocumentController implements Initializable {
             txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
             array.add(funcoes.getResultado()); // add the result on the main array
             System.out.println(array.toString());
+            lbPrefix.setText("");
         }
     }
      @FXML
@@ -235,6 +258,7 @@ public class FXMLDocumentController implements Initializable {
                 funcoes.adicionarNumero(array.get(0));
                 funcoes.calcular();
                 txtScreen.setText(Double.toString(funcoes.getResultado()));
+                lbPrefix.setText("");
             }else {
                 /*To calculate the (1/x): */
                 funcoes.adicionarNumero(array.get(0));
@@ -254,6 +278,7 @@ public class FXMLDocumentController implements Initializable {
              funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText()));
              funcoes.calcular();
              txtScreen.setText(Double.toString(funcoes.getResultado()));
+             lbPrefix.setText("");
          }else {
              System.out.println("%T");
          }

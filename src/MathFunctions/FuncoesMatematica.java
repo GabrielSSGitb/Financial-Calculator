@@ -37,6 +37,10 @@ public class FuncoesMatematica {
             resultado = Math.log(numeros.get(0));
         }else if(operacoes.get(0).contains("CHS")) {
             resultado = -numeros.get(0);
+        }else if(operacoes.get(0).contains("n!")) {
+            if (resultado < 0 || resultado != Math.floor(resultado))
+                        throw new ArithmeticException("Fatorial de número negativo ou não inteiro");
+            resultado = fatorial((int) resultado);
         }
 
         /*for (int i = 0; i < operacoes.size(); i++) {
