@@ -295,7 +295,7 @@ public class FXMLDocumentController implements Initializable {
                         double temp2 = array.get(1);
                         array.set(1, temp);
                         array.set(0, temp2);
-                        System.out.println(array.toString());
+                        txtScreen.setText(Double.toString(temp2));
                         x = 1;
                     }else {
                         //case x has been moved:
@@ -303,7 +303,7 @@ public class FXMLDocumentController implements Initializable {
                         double temp2 = array.get(1);
                         array.set(1, temp2);
                         array.set(0, temp);
-                        System.out.println(array.toString());
+                        txtScreen.setText(Double.toString(temp));
                         x = 0;
                     }
                     }
