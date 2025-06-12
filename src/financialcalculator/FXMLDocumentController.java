@@ -284,6 +284,30 @@ public class FXMLDocumentController implements Initializable {
              System.out.println("%T");
          }
      }
+     @FXML
+     private void xy(ActionEvent event) {
+         /* To invert the x and y on the calculator´s register */
+         if (array.size() >= 2) {
+                int x = 0;
+                    if(x == 0) {
+                        //case x has not been inverted yet:
+                        double temp = array.get(0);
+                        double temp2 = array.get(1);
+                        array.set(1, temp);
+                        array.set(0, temp2);
+                        System.out.println(array.toString());
+                        x = 1;
+                    }else {
+                        //case x has been moved:
+                        double temp = array.get(0);
+                        double temp2 = array.get(1);
+                        array.set(1, temp2);
+                        array.set(0, temp);
+                        System.out.println(array.toString());
+                        x = 0;
+                    }
+                    }
+     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

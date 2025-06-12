@@ -43,7 +43,6 @@ public class FuncoesMatematica {
                         throw new ArithmeticException("Fatorial de número negativo ou não inteiro");
             resultado = fatorial((int) resultado);
         }
-        /* Adicionar a função x<>y na hora de implementar os metodos da Tabela Price */
     }
 
     public double getResultado() {

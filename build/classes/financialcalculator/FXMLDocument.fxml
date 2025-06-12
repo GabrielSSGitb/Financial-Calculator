@@ -54,7 +54,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnF2111" layoutX="212.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnF" prefHeight="31.0" prefWidth="57.0" text="X&lt;&gt;Y">
+      <Button fx:id="btnF2111" layoutX="212.0" layoutY="330.0" mnemonicParsing="false" onAction="#xy" prefHeight="31.0" prefWidth="57.0" text="X&lt;&gt;Y">
          <font>
             <Font size="13.0" />
          </font>
