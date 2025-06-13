@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import memory.STO;
 
 /**
  *
@@ -20,9 +21,9 @@ public class FXMLDocumentController implements Initializable {
     //Values saving and variables declarations:
     ArrayList<Double> array = new ArrayList<>(); //Creating an arrayList
     private double result;
+    private int sto = 0;
     private int f = 0;
     private int g = 0;
-    private double decimalCasesQTD = 0.00;
     //For financial calculations:
     private Double i = 0.00;
     private Double n = 0.00;
@@ -71,10 +72,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void CLX(ActionEvent event) {
         if (f == 1) {
+            STO stoClass = new STO();
             array.clear(); //Clean memory on the calculator
             txtScreen.setText("0");
             lbPrefix.setText("");
             f = 0;
+            stoClass.clearMemory();
         }else {
             txtScreen.setText(""); //Clean only the textfield
         }
@@ -82,7 +85,7 @@ public class FXMLDocumentController implements Initializable {
     //Calculator btn´s Functions:
     ;
     @FXML
-    private void btn(ActionEvent event) {
+    public void btn(ActionEvent event) {
         Button btn = (Button) event.getSource();
         String value = btn.getText();
         String current = txtScreen.getText();
@@ -100,8 +103,18 @@ public class FXMLDocumentController implements Initializable {
             funcoes.calcular();
             txtScreen.setText(Double.toString(funcoes.getResultado()));
             lbPrefix.setText("");
+        
+        }else if(sto != 0) {
+            STO stoClass = new STO();
+            stoClass.STOSave(sto, Double.parseDouble(current));
+            txtScreen.setText("");
+            sto = 0;
         }
     }
+    @FXML
+        private void stoBTN(ActionEvent event) {
+            sto = 1;
+        }
     //Basic calculations:
     ;
     @FXML

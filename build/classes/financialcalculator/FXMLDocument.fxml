@@ -36,7 +36,7 @@
       <Button layoutX="288.0" layoutY="330.0" mnemonicParsing="false" onAction="#CLX" prefHeight="31.0" prefWidth="57.0" text="CLX" />
       <Button fx:id="btnF1" layoutX="147.0" layoutY="376.0" mnemonicParsing="false" onAction="#btnG" prefHeight="31.0" prefWidth="43.0" text="g" />
       <Button layoutX="288.0" layoutY="376.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="57.0" text="RCL" />
-      <Button layoutX="212.0" layoutY="376.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="57.0" text="STO" />
+      <Button layoutX="212.0" layoutY="376.0" mnemonicParsing="false" onAction="#stoBTN" prefHeight="31.0" prefWidth="57.0" text="STO" />
       <ImageView fitHeight="84.0" fitWidth="105.0" layoutX="574.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Logo.png" />
