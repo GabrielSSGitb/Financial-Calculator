@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="./FinancialCalculator\src\images/Logo.png" alt="Logo do Projeto" width="300"/>
+  <img src="./src/images/Logo.png" alt="Logo do Projeto" width="300">
 </p>
-
 
 # 🧠 HP-12C Financial Calculator (JavaFX)
 
