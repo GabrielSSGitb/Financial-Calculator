@@ -33,6 +33,7 @@ public class FXMLDocumentController implements Initializable {
     private Double n = 0.00;
     private Double pv = 0.00;
     private Double fv = 0.00;
+    private Double pmt = 0.00;
 
     //FXML imports:
     @FXML
@@ -42,21 +43,21 @@ public class FXMLDocumentController implements Initializable {
 
     //Basic functions:
     @FXML
-    private void btnF(ActionEvent event) {
+    public void btnF(ActionEvent event) {
         f = true;
         lbPrefix.setText("f");
         /* If the variable equals 1 - and on CLX press = f helps to clean the input and array */
     }
     
     @FXML
-    private void btnG(ActionEvent event) {
+    public void btnG(ActionEvent event) {
         g = true;
         lbPrefix.setText("g");
         /* To informe if the g function is being used */
     }
     
     @FXML
-    private void btnOn(ActionEvent event) {
+    public void btnOn(ActionEvent event) {
         array.clear();
         f = false;
         g = false;
@@ -66,7 +67,7 @@ public class FXMLDocumentController implements Initializable {
     //Enter BTN:
     ;
     @FXML
-    private void Enter(ActionEvent event) {
+    public void Enter(ActionEvent event) {
         array.add(Double.parseDouble(txtScreen.getText()));
         txtScreen.setText("0");
         if (g == true && f == true) {
@@ -80,7 +81,7 @@ public class FXMLDocumentController implements Initializable {
 
     //CLX Funtion BTN:
     @FXML
-    private void CLX(ActionEvent event) {
+    public void CLX(ActionEvent event) {
         if (f == true) {
             STO stoClass = new STO();
             array.clear(); //Clean memory on the calculator
@@ -96,7 +97,7 @@ public class FXMLDocumentController implements Initializable {
     //Calculator btn´s Functions:
     ;
     @FXML
-    private void btn(ActionEvent event) {
+    public void btn(ActionEvent event) {
         Button btn = (Button) event.getSource();
         String value = btn.getText();
         String current = txtScreen.getText();
@@ -129,13 +130,13 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void stoBTN(ActionEvent event) {
+    public void stoBTN(ActionEvent event) {
         sto = true;
         array.add(Double.parseDouble(txtScreen.getText())); //Save the value on the array temporarily
     }
 
     @FXML
-    private void rclBTN(ActionEvent event) {
+    public void rclBTN(ActionEvent event) {
         rcl = true;
     }
 
@@ -143,7 +144,7 @@ public class FXMLDocumentController implements Initializable {
 
     ;
     @FXML
-    private void addUp(ActionEvent event) {
+    public void addUp(ActionEvent event) {
         //Addup calculating:
         result = 0;
         for (int i = 0; i < array.size(); i++) {
@@ -156,7 +157,7 @@ public class FXMLDocumentController implements Initializable {
     
     ;
     @FXML
-    private void subtraction(ActionEvent event) {
+    public void subtraction(ActionEvent event) {
         result = array.get(0); //Get the first value of the array
         array.remove(0); // Remove from the array the first value
         for (int i = 0; i < array.size(); i++) {
@@ -169,7 +170,7 @@ public class FXMLDocumentController implements Initializable {
     
     ;
     @FXML
-    private void multiplication(ActionEvent event) {
+    public void multiplication(ActionEvent event) {
         //Multi
         result = 1;
         for (int i = 0; i < array.size(); i++) {
@@ -182,7 +183,7 @@ public class FXMLDocumentController implements Initializable {
     
     ;
     @FXML
-    private void division(ActionEvent event) {
+    public void division(ActionEvent event) {
         //Divide
         result = array.get(0);
         array.remove(0);
@@ -237,9 +238,21 @@ public class FXMLDocumentController implements Initializable {
         if (fv == 0) {
             interest in = new interest();
             txtScreen.setText(in.calculateAmount(n, i, pv)); //Put the result in the Screen
+        }else if(pmt != 0) {
+            interest in = new interest();
+            txtScreen.setText(in.calculateFVWithPMT(pv, i, n, pmt));
         }
     }
-    
+    @FXML
+    public void PMTbtn(ActionEvent event) {
+        pmt = Double.parseDouble(txtScreen.getText());
+        txtScreen.setText("0");
+        if (pmt == 0) {
+            interest in = new interest();
+            txtScreen.setText(in.calculatePMT(pv, i, n)); //Put the result in the Screen
+        }
+        
+    }
     ;
     @FXML
     private void dot(ActionEvent event) {
@@ -251,7 +264,7 @@ public class FXMLDocumentController implements Initializable {
 
     //Math functions:
     @FXML
-    private void CHS(ActionEvent event) {
+    public void CHS(ActionEvent event) {
         /* To put negative numbers on the calculator */
         if (txtScreen.getText().equals("") || txtScreen.getText().equals("0") || txtScreen.getText().equals("0.00")) {
             txtScreen.setText("Error - no use");
@@ -265,7 +278,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void exponencial(ActionEvent event) {
+    public void exponencial(ActionEvent event) {
         FuncoesMatematica funcoes = new FuncoesMatematica();
         if (g == false) {
             funcoes.adicionarOperacao("^");
@@ -286,7 +299,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void btn1ByX(ActionEvent event) {
+    public void btn1ByX(ActionEvent event) {
         FuncoesMatematica funcoes = new FuncoesMatematica();
         if (g == true) {
             /* To calculate the Euler´s exponential (e^x)*/
@@ -308,7 +321,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void TotalPercentage(ActionEvent event) {
+    public void TotalPercentage(ActionEvent event) {
         /* To calculate Neperian Logarithm and use the %T button*/
         FuncoesMatematica funcoes = new FuncoesMatematica();
         if (g == true) {
@@ -324,7 +337,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void xy(ActionEvent event) {
+    public void xy(ActionEvent event) {
         /* To invert the x and y on the calculator´s register */
         if (array.size() >= 2) {
             int x = 0;
