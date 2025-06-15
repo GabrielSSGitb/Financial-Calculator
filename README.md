@@ -1,147 +1,181 @@
 <p align="center">
-  <img src="./src/images/Logo.png" alt="Logo do Projeto" width="300">
+  <img src="./src/images/Logo.png" alt="Project Logo" width="300">
 </p>
 
 # 🧠 HP-12C Financial Calculator (JavaFX)
 
-Simulação de uma calculadora financeira HP-12C desenvolvida em Java, utilizando JavaFX para interface gráfica. Este projeto permite realizar cálculos financeiros e matemáticos exatamente como na clássica HP-12C, incluindo operações com juros compostos, valor presente (PV), valor futuro (FV), pagamentos periódicos (PMT), taxa de juros (i) e número de períodos (n).
+Simulation of an HP-12C financial calculator developed in Java, using JavaFX for the graphical interface. This project allows financial and mathematical calculations exactly like the classic HP-12C, including compound interest operations, present value (PV), future value (FV), payments (PMT), interest rate (i), and number of periods (n).
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-### ✔️ Operações Matemáticas:
-- Soma
-- Subtração
-- Multiplicação
-- Divisão
-- Potência (xʸ)
-- Raiz quadrada (√)
-- Fatorial (n!)
-- Logaritmo neperiano (ln)
-- Exponencial (eˣ)
-- Inverso (1/x)
-- Troca de posições entre registradores (x↔y)
-- Operador CHS (troca de sinal)
+### ✔️ Mathematical Operations:
+- Addition
+- Subtraction
+- Multiplication
+- Division
+- Power (xʸ)
+- Square root (√)
+- Factorial (n!)
+- Natural logarithm (ln)
+- Exponential (eˣ)
+- Inverse (1/x)
+- Swap registers (x↔y)
+- CHS operator (change sign)
 
-### ✔️ Operações Financeiras:
-- Cálculo de **n** (número de períodos)
-- Cálculo de **i** (taxa de juros)
-- Cálculo de **PV** (valor presente)
-- Cálculo de **FV** (valor futuro)
-- Cálculo de **PMT** (valor das prestações)
+### ✔️ Financial Operations:
+- Calculate **n** (number of periods)
+- Calculate **i** (interest rate)
+- Calculate **PV** (present value)
+- Calculate **FV** (future value)
+- Calculate **PMT** (payment amount)
 
-### ✔️ Memória:
-- Função **STO** (armazenar valores em registradores)
-- Função **RCL** (recuperar valores dos registradores)
-- Limpeza de registradores via **CLX + f**
+### ✔️ Memory Functions:
+- **STO** (store values in registers)
+- **RCL** (recall values from registers)
+- Clear registers using **CLX + f**
 
-### ✔️ Teclas especiais:
-- **f** e **g** para acessar funções secundárias
-- Prefixos e manipulação igual à calculadora real
+### ✔️ Special Keys:
+- **f** and **g** to access secondary functions
+- Prefixes and handling just like the real HP-12C
 
 ---
 
-## 🏗️ Estrutura do Projeto
+## 🏗️ Project Structure
 
 src/
 │
-├── financialcalculator/ -> Arquivo principal (Controller do FXML)
+├── financialcalculator/ -> Main file (FXML Controller)
 │
 ├── FinancialClass/
-│ └── interest.java -> Classe responsável pelos cálculos financeiros (FV, PV, PMT, n, i)
+│ └── interest.java -> Handles financial calculations (FV, PV, PMT, n, i)
 │
 ├── MathFunctions/
-│ └── FuncoesMatematica.java -> Classe responsável pelas funções matemáticas (potência, fatorial, raiz, etc.)
+│ └── FuncoesMatematica.java -> Handles mathematical functions (power, factorial, root, etc.)
 │
 ├── memory/
-│ └── STO.java -> Controle da memória (STO e RCL)
+│ └── STO.java -> Memory management (STO and RCL)
 │
-└── resources/ -> Arquivos FXML e imagens
+└── resources/ -> FXML files and images
 
 
 
 ---
 
-## 💻 Tecnologias Utilizadas
+## 💻 Technologies Used
 
 - Java 17+ ☕
 - JavaFX (FXML)
-- Scene Builder (para interface)
-- IDE recomendada: IntelliJ, Eclipse ou NetBeans
+- Scene Builder (for UI design)
+- Recommended IDEs: IntelliJ, Eclipse, or NetBeans
 
 ---
 
-## 🔢 Fórmulas Financeiras Implementadas
+## 🔢 Financial Formulas Implemented
 
-### 📍 Valor das Prestações (PMT):
+### 📍 Payment (PMT):
 \[
-PMT = \frac{PV \cdot i \cdot (1 + i)^n}{(1 + i)^n - 1}
+PMT = \frac{PV \cdot i \cdot (1+i)^n}{(1+i)^n - 1}
 \]
 
-### 📍 Valor Futuro (FV):
+### 📍 Future Value (FV):
 \[
-FV = PV \cdot (1 + i)^n + PMT \cdot \frac{(1 + i)^n - 1}{i}
+FV = C(1 + i)^n
 \]
 
-### 📍 Valor Presente (PV):
+
+---
+
+## 💻 Technologies Used
+
+- Java 17+ ☕
+- JavaFX (FXML)
+- Scene Builder (for UI design)
+- Recommended IDEs: IntelliJ, Eclipse, or NetBeans
+
+---
+
+## 🔢 Financial Formulas Implemented
+
+### 📍 Payment (PMT):
 \[
-PV = \frac{FV - PMT \cdot \frac{(1 + i)^n - 1}{i}}{(1 + i)^n}
+PMT = \frac{PV \cdot i \cdot (1+i)^n}{(1+i)^n - 1}
 \]
 
-### 📍 Taxa de Juros (i):
-- Calculado iterativamente (não possui fórmula fechada)
-
-### 📍 Número de Períodos (n):
-- Calculado por logaritmo:
+### 📍 Future Value (FV):
 \[
-n = \frac{\ln(\frac{FV \cdot i + PMT}{PV \cdot i + PMT})}{\ln(1 + i)}
+FV = C(1 + i)^n
+\]
+
+### 📍 Present Value (PV):
+\[
+PV = \frac{FV}{(1 + i)^n}
+\]
+
+### 📍 Interest Rate (i):
+\[
+i = \sqrt[n]{\frac{FV}{PV}} - 1
+\]
+
+### 📍 Number of Periods (n):
+\[
+n = \frac{\ln(FV/PV)}{\ln(1 + i)}
 \]
 
 ---
 
-## 📲 Como Executar o Projeto
+## 📲 How to Run the Project
 
-1. Clone o repositório:
+1. Clone the repository:
 ```bash
-git clone https://github.com/seuusuario/hp12c-javafx.git
-
-1 - Importe o projeto na sua IDE.
-
-2 - Configure o JavaFX:
-
-3 - Configure o caminho das bibliotecas do JavaFX.
+git clone https://github.com/yourusername/hp12c-javafx.git
 
 
-🧠 Melhorias Futuras
-Salvar os dados em JSON ou XML.
+Import the project into your preferred IDE.
 
-Implementar tema dark e tema light.
+Configure JavaFX:
 
-Criar um modo científico além do modo financeiro.
+Download JavaFX SDK
 
-Implemetar cálculos estatísticos
+Link JavaFX libraries to your project (VM Options and Build Path)
 
-
-🙌 Contribuição
-Sinta-se livre para:
-
-Reportar bugs
-
-Sugerir melhorias
-
-Fazer um fork e enviar Pull Requests
+Run the project using the main class.
 
 
-👨‍💻 Autor
+
+
+🧠 Future Improvements
+Save data using JSON or XML.
+
+Implement dark and light themes.
+
+Add a scientific calculator mode.
+
+Implement statistical calculations.
+
+
+
+🙌 Contribution
+Feel free to:
+
+Report bugs
+
+Suggest improvements
+
+Fork the repository and submit Pull Requests
+
+
+
+👨‍💻 Author
 Gabriel Santos Silva
 📧 gabrielsantossilva10gtv@gmail.com
 
-Equipe:
-
-👨‍💻 - João Pedro de Almeida
-👨‍💻 - Arthur
-👨‍💻 - Estevan
 
 
+Team:
+👨‍💻 João Pedro de Almeida
 
+👨‍💻 Arthur
+
+👨‍💻 Estevan
