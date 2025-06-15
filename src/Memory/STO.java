@@ -3,41 +3,26 @@ package memory;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class STO {
-    private Map<Integer, Double> registers = new HashMap<>();
-    
-      public void STOSave(int num, Double current_value) {
-          registers.put(num, current_value);
-          System.out.println(registers);
-      }
-      public void clearMemory() {
-          registers.clear();
-          System.out.println(registers);
-      }
-   /* private Stack<Double> rpnStack;
-    private Map<Integer, Double> registers;
 
-    public STO() {
-        rpnStack = new Stack<>();
-        registers = new HashMap<>();
-        for (int i = 0; i <= 9; i++) { // Inicializa os registradores de 0 a 9
-            registers.put(i, 0.0);
-        }
+    private double[] registers = new double[9];
+    private int exec = 0;
+    public void STOInitialize() {
+            if(this.exec == 0) {
+                for(int i = 0; i < registers.length; i++) {
+                    registers[i] = 0.00;
+                }
+                exec += 1;
+            }
     }
 
-    // ... outros métodos (enter, display, rcl, etc.) ...
-
-   
-    public void sto(int registerNumber) {
-        if (rpnStack.isEmpty()) {
-            System.out.println("Erro: Pilha vazia. Nada para armazenar."); // Mensagem para console
-            return;
-        }
-        double valueToStore = rpnStack.peek(); // Pega o valor do topo da pilha SEM REMOVER
-        registers.put(registerNumber, valueToStore); // Armazena o valor no registrador
-        System.out.println("Armazenado " + valueToStore + " no registrador "
-                + "[" + registerNumber + "]"); // Mensagem para console
+    public void STOSave(int index, double current_value) {
+        this.registers[index] = current_value;
+        System.out.println(this.registers[index]);
+        System.out.println(index);
     }
-*/
+
+    public void clearMemory() {
+
+    }
 }
