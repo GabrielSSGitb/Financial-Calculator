@@ -1,28 +1,25 @@
 package memory;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class STO {
 
-    private double[] registers = new double[9];
-    private int exec = 0;
-    public void STOInitialize() {
-            if(this.exec == 0) {
-                for(int i = 0; i < registers.length; i++) {
-                    registers[i] = 0.00;
-                }
-                exec += 1;
-            }
+    public double[] reg = new double[10];
+
+    public void STOSave(int index, double value) {
+        this.reg[index] = value;
     }
 
-    public void STOSave(int index, double current_value) {
-        this.registers[index] = current_value;
-        System.out.println(this.registers[index]);
-        System.out.println(index);
+    public double getRCL(int index) {
+        return this.reg[index];
     }
 
     public void clearMemory() {
-
+        for(int i = 0; i < this.reg.length; i++) {
+            reg[i] = 0.00;
+        }
+        this.reg = new double[0];
     }
 }

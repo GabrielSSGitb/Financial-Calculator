@@ -21,8 +21,10 @@ public class FXMLDocumentController implements Initializable {
 
     //Values saving and variables declarations:
     ArrayList<Double> array = new ArrayList<>(); //Creating an arrayList
+    STO stoClass = new STO();
     private double result;
     private boolean sto = false;
+    private int stoCounter = 0;
     private boolean rcl = false;
     private boolean f = false;
     private boolean g = false;
@@ -94,7 +96,7 @@ public class FXMLDocumentController implements Initializable {
     //Calculator btn´s Functions:
     ;
     @FXML
-    public void btn(ActionEvent event) {
+    private void btn(ActionEvent event) {
         Button btn = (Button) event.getSource();
         String value = btn.getText();
         String current = txtScreen.getText();
@@ -115,19 +117,21 @@ public class FXMLDocumentController implements Initializable {
             
         } else if (sto == true) {
             /* Saving data with STO function: */
-            STO stoClass = new STO();
-            stoClass.STOInitialize();
-            stoClass.STOSave(Integer.parseInt(value), Double.parseDouble(current));
-            txtScreen.setText("");
+            stoClass.STOSave(Integer.parseInt(value), array.get(stoCounter)); //Pass the index and value to store on the class
+            txtScreen.setText("0");
+            stoCounter++; // Updates the array index
             sto = false;
         } else if (rcl == true) {
-            System.out.println("");
+               /* To get data stored in the calculator: */
+                txtScreen.setText(Double.toString(stoClass.getRCL(Integer.parseInt(value))));
+                rcl = false;
         }
     }
     
     @FXML
     private void stoBTN(ActionEvent event) {
         sto = true;
+        array.add(Double.parseDouble(txtScreen.getText())); //Save the value on the array temporarily
     }
 
     @FXML
