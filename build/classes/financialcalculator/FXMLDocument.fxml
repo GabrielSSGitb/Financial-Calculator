@@ -15,12 +15,12 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffdd6d" height="226.0" layoutX="-166.0" layoutY="-84.0" opacity="0.88" stroke="#00000070" strokeType="INSIDE" width="859.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000086" height="341.0" layoutX="-18.0" layoutY="141.0" opacity="0.88" stroke="#00000070" strokeType="INSIDE" width="709.0" />
       <TextField fx:id="txtScreen" alignment="CENTER_RIGHT" layoutX="37.0" layoutY="36.0" prefHeight="58.0" prefWidth="515.0" text="0" />
-      <Button fx:id="btnAddup" layoutX="593.0" layoutY="359.0" mnemonicParsing="false" onAction="#addUp" text="+" />
-      <Button layoutX="537.0" layoutY="359.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="∑+" />
-      <Button fx:id="btnAddup1" layoutX="494.0" layoutY="359.0" mnemonicParsing="false" onAction="#dot" prefHeight="31.0" prefWidth="31.0" text="." />
-      <Button fx:id="btnAddup11" layoutX="449.0" layoutY="359.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="0" />
+      <Button fx:id="btnAddup" layoutX="593.0" layoutY="359.0" mnemonicParsing="false" onAction="#addUp" prefHeight="47.0" prefWidth="34.0" text="+" />
+      <Button layoutX="537.0" layoutY="359.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="43.0" text="∑+" />
+      <Button fx:id="btnAddup1" layoutX="494.0" layoutY="359.0" mnemonicParsing="false" onAction="#dot" prefHeight="47.0" prefWidth="31.0" text="." />
+      <Button fx:id="btnAddup11" layoutX="449.0" layoutY="359.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="47.0" prefWidth="31.0" text="0" />
       <Button fx:id="btn1" layoutX="451.0" layoutY="297.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="1" />
-      <Button layoutX="358.0" layoutY="366.0" mnemonicParsing="false" onAction="#Enter" prefHeight="94.0" prefWidth="57.0" text="Enter" />
+      <Button layoutX="359.0" layoutY="361.0" mnemonicParsing="false" onAction="#Enter" prefHeight="84.0" prefWidth="57.0" text="Enter" />
       <Button fx:id="btn11" layoutX="496.0" layoutY="297.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="2" />
       <Button fx:id="btn111" layoutX="545.0" layoutY="297.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="3" />
       <Button fx:id="btn1111" layoutX="451.0" layoutY="235.0" mnemonicParsing="false" onAction="#btn" onMousePressed="#btn" prefHeight="31.0" prefWidth="31.0" text="4" />
@@ -294,17 +294,17 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="450.0" layoutY="391.0" prefHeight="17.0" prefWidth="34.0" text="   x̅" textFill="#0059ff">
+      <Label layoutX="450.0" layoutY="410.0" prefHeight="17.0" prefWidth="34.0" text="   x̅" textFill="#0059ff">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="493.0" layoutY="390.0" prefHeight="17.0" prefWidth="34.0" text="   S" textFill="#0059ff">
+      <Label layoutX="495.0" layoutY="410.0" prefHeight="17.0" prefWidth="34.0" text="   S" textFill="#0059ff">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="542.0" layoutY="391.0" prefHeight="17.0" prefWidth="34.0" text="   Σ-" textFill="#0059ff">
+      <Label layoutX="544.0" layoutY="410.0" prefHeight="17.0" prefWidth="34.0" text="   Σ-" textFill="#0059ff">
          <font>
             <Font size="13.0" />
          </font>

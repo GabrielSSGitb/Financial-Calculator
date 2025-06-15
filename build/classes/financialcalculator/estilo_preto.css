@@ -1,0 +1,28 @@
+
+.button {
+    -fx-background-color: #1c1c1c;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 4, 0, 0, 2);
+    -fx-padding: 10 20 10 20;
+}
+
+.button:hover {
+    -fx-background-color: #333333;
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-background-color: #0f0f0f;
+}
+
+#botaoFuncao {
+    -fx-background-color: linear-gradient(#ffbb33, #e69500);
+    -fx-text-fill: black;
+}
+
+#botaoIgual {
+    -fx-background-color: linear-gradient(#00c853, #009624);
+}
