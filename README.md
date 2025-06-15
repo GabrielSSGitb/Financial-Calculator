@@ -72,20 +72,6 @@ src/
 
 ---
 
-## 🔢 Financial Formulas Implemented
-
-### 📍 Payment (PMT):
-\[
-PMT = \frac{PV \cdot i \cdot (1+i)^n}{(1+i)^n - 1}
-\]
-
-### 📍 Future Value (FV):
-\[
-FV = C(1 + i)^n
-\]
-
-
----
 
 ## 💻 Technologies Used
 
@@ -100,7 +86,7 @@ FV = C(1 + i)^n
 
 ### 📍 Payment (PMT):
 \[
-PMT = \frac{PV \cdot i \cdot (1+i)^n}{(1+i)^n - 1}
+PMT = PV*i*(1+i)^n / (1 + i)^n - 1
 \]
 
 ### 📍 Future Value (FV):
@@ -110,17 +96,17 @@ FV = C(1 + i)^n
 
 ### 📍 Present Value (PV):
 \[
-PV = \frac{FV}{(1 + i)^n}
+PV = FV/(1 + i)^n
 \]
 
 ### 📍 Interest Rate (i):
 \[
-i = \sqrt[n]{\frac{FV}{PV}} - 1
+i = (FV/PV)^1/n - 1
 \]
 
 ### 📍 Number of Periods (n):
 \[
-n = \frac{\ln(FV/PV)}{\ln(1 + i)}
+N = ln(FV/PV)/ln(1 + i)
 \]
 
 ---
