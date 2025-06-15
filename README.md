@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="./FinancialCalculator\src\images/Logo.png" alt="Logo do Projeto" width="300"/>
+</p>
+
+
 # 🧠 HP-12C Financial Calculator (JavaFX)
 
 Simulação de uma calculadora financeira HP-12C desenvolvida em Java, utilizando JavaFX para interface gráfica. Este projeto permite realizar cálculos financeiros e matemáticos exatamente como na clássica HP-12C, incluindo operações com juros compostos, valor presente (PV), valor futuro (FV), pagamentos periódicos (PMT), taxa de juros (i) e número de períodos (n).
