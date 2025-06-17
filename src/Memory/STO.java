@@ -17,9 +17,6 @@ public class STO {
     }
 
     public void clearMemory() {
-        for(int i = 0; i < this.reg.length; i++) {
-            reg[i] = 0.00;
-        }
         this.reg = new double[0];
     }
 }

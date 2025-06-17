@@ -83,7 +83,6 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void CLX(ActionEvent event) {
         if (f == true) {
-            STO stoClass = new STO();
             array.clear(); //Clean memory on the calculator
             txtScreen.setText("0");
             lbPrefix.setText("");
@@ -184,7 +183,7 @@ public class FXMLDocumentController implements Initializable {
     ;
     @FXML
     public void division(ActionEvent event) {
-        //Divide
+        //
         result = array.get(0);
         array.remove(0);
         for (int i = 0; i < array.size(); i++) {

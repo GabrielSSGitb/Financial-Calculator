@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HP-12C Financial Calculator - JavaFX Project</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background-color: darkgray;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 5px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .button {
+            background: linear-gradient(white, darkgray);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: linear-gradient(#67b5ff, #468fd1);
+            color: white;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HP-12C Financial Calculator</h1>
+    <p>JavaFX Simulation Project</p>
+</header>
+
+<div class="container">
+    <div class="section">
+        <img src="Logo.png" alt="Calculator Logo">
+    </div>
+
+    <div class="section">
+        <h2>About the Project</h2>
+        <p>
+            This project simulates the legendary HP-12C financial calculator using Java and JavaFX.
+            It replicates financial and mathematical operations including compound interest, present value (PV),
+            future value (FV), payments (PMT), interest rate (i), and number of periods (n).
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Button Functions</h2>
+        <div class="button-grid">
+            <div class="button"><b>F / G</b> → Access secondary functions</div>
+            <div class="button"><b>CLX</b> → Clear display or memory (with F)</div>
+            <div class="button"><b>STO / RCL</b> → Store and recall memory registers</div>
+            <div class="button"><b>CHS</b> → Change sign (positive/negative)</div>
+            <div class="button"><b>1/x</b> → Calculate inverse</div>
+            <div class="button"><b>√</b> → Square root</div>
+            <div class="button"><b>^</b> → Power (xʸ)</div>
+            <div class="button"><b>ln / eˣ</b> → Logarithm and exponential functions</div>
+            <div class="button"><b>n!</b> → Factorial (via G + 3)</div>
+            <div class="button"><b>+</b> → Addition</div>
+            <div class="button"><b>-</b> → Subtraction</div>
+            <div class="button"><b>×</b> → Multiplication</div>
+            <div class="button"><b>÷</b> → Division</div>
+            <div class="button"><b>ENTER</b> → Push value to stack</div>
+            <div class="button"><b>XY</b> → Swap X and Y values</div>
+            <div class="button"><b>PMT</b> → Calculate payment amount</div>
+            <div class="button"><b>PV</b> → Set present value</div>
+            <div class="button"><b>FV</b> → Set future value</div>
+            <div class="button"><b>i</b> → Set interest rate</div>
+            <div class="button"><b>n</b> → Set number of periods</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Main Methods Description (FXMLDocumentController)</h2>
+        <ul>
+            <li><b>btnF()</b>: Activates F function prefix for secondary operations.</li>
+            <li><b>btnG()</b>: Activates G function prefix for mathematical functions.</li>
+            <li><b>btnOn()</b>: Clears all current data and resets the calculator.</li>
+            <li><b>CLX()</b>: Clears the display or, when F is active, clears memory and registers.</li>
+            <li><b>Enter()</b>: Pushes the current display number into the stack array.</li>
+            <li><b>stoBTN()</b> / <b>rclBTN()</b>: Save or retrieve numbers from memory registers.</li>
+            <li><b>addUp()</b>: Performs addition of stack numbers.</li>
+            <li><b>subtraction()</b>: Performs subtraction between stacked numbers.</li>
+            <li><b>multiplication()</b>: Performs multiplication of stack numbers.</li>
+            <li><b>division()</b>: Performs division of stacked numbers.</li>
+            <li><b>nbtn()</b>: Sets the number of periods or calculates it if zero.</li>
+            <li><b>ibtn()</b>: Sets the interest rate or calculates it if zero.</li>
+            <li><b>pvbtn()</b>: Sets present value or calculates it if zero.</li>
+            <li><b>fvbtn()</b>: Sets future value or calculates it.</li>
+            <li><b>PMTbtn()</b>: Sets payment or calculates it.</li>
+            <li><b>exponencial()</b>: Calculates xʸ or √ depending on G state.</li>
+            <li><b>btn1ByX()</b>: Calculates the inverse or eˣ depending on G state.</li>
+            <li><b>TotalPercentage()</b>: Calculates ln or placeholder for %T function.</li>
+            <li><b>xy()</b>: Swaps X and Y in the register stack.</li>
+            <li><b>dot()</b>: Adds a decimal point to the input.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>Java 17+</li>
+            <li>JavaFX (FXML)</li>
+            <li>Scene Builder</li>
+            <li>CSS for styling</li>
+            <li>IDE: IntelliJ, Eclipse, or NetBeans</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p>Developed by Gabriel Santos Silva | Contact: gabrielsantossilva10gtv@gmail.com</p>
+</footer>
+
+</body>
+</html>
