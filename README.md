@@ -162,6 +162,6 @@ Gabriel Santos Silva
 Team:
 👨‍💻 João Pedro Almeida - Jp-Almeida0913
 
-👨‍💻 Arthur
+👨‍💻 Arthur Augusto - ArthurAugusto-1203
 
-👨‍💻 Estevan
+👨‍💻 Estevan Santos - EstevamLuiz
