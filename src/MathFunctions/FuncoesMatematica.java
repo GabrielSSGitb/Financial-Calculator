@@ -21,6 +21,7 @@ public class FuncoesMatematica {
             resultado = 0;
             return;
         }
+        
 
         resultado = numeros.get(0);
         //To verify with function it must do:

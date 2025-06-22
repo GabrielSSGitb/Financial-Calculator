@@ -1,6 +1,7 @@
 package financialcalculator;
 
 import FinancialClass.interest;
+import Formater.StringFormater;
 import MathFunctions.FuncoesMatematica;
 import java.net.URL;
 import java.util.ArrayList;
@@ -11,20 +12,23 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import memory.STO;
-
+import Memory.STO;
+import Statistics.Statistics;
 /**
  *
  * @author gabri
  */
 public class FXMLDocumentController implements Initializable {
-
-    //Values saving and variables declarations:
-    ArrayList<Double> array = new ArrayList<>(); //Creating an arrayList
+	//Calling objects:
+    ArrayList<Double> array = new ArrayList<>(); //Creating an arrayList for register memory
+    StringFormater sf = new StringFormater();
+    Statistics st = new Statistics();
     STO stoClass = new STO();
+    //Values saving and variables declarations:
     private double result;
-    private boolean sto = false;
+    private int sumCounter = 0;
     private int stoCounter = 0;
+    private boolean sto = false;
     private boolean rcl = false;
     private boolean f = false;
     private boolean g = false;
@@ -92,6 +96,16 @@ public class FXMLDocumentController implements Initializable {
             txtScreen.setText(""); //Clean only the textfield
         }
     }
+    @FXML
+    public void SST(ActionEvent event) {
+    	if(f == true) {
+    		//For clening the sum memory array:
+    		st.clearArray();
+    		txtScreen.setText("0");
+    		lbPrefix.setText("");
+    		f = false;
+    	}
+    }
 
     //Calculator btn´s Functions:
     ;
@@ -123,8 +137,16 @@ public class FXMLDocumentController implements Initializable {
             sto = false;
         } else if (rcl == true) {
                /* To get data stored in the calculator: */
-                txtScreen.setText(Double.toString(stoClass.getRCL(Integer.parseInt(value))));
+               txtScreen.setText(Double.toString(stoClass.getRCL(Integer.parseInt(value))));
                 rcl = false;
+        }else if(f == true) {
+        	sf.decimalFormater(value);
+        	txtScreen.setText("0.00");
+        	f = false;
+        	System.out.println(sf.formatNumber("24"));
+        	lbPrefix.setText("");
+        }else if(value.equals("0") && g == true) {
+        	simpleAVG();
         }
     }
     
@@ -358,6 +380,19 @@ public class FXMLDocumentController implements Initializable {
                 x = 0;
             }
         }
+    }
+    //To call statistical methods:
+    @FXML
+    public void sum(ActionEvent event) {
+    	sumCounter++;
+    	st.positiveSum(Double.parseDouble(txtScreen.getText()));
+    	lbPrefix.setText(Integer.toString(sumCounter));
+    	txtScreen.setText("0");
+    }
+    @FXML
+    public void simpleAVG() {
+    	txtScreen.setText(Double.toString(st.avg()));
+    	g = false;
     }
     
     @Override
