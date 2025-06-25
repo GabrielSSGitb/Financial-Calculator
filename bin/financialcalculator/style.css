@@ -26,3 +26,8 @@
 #botaoIgual {
     -fx-background-color: linear-gradient(#00c853, #009624);
 }
+.txtScreen {
+	-fx-background-color: #DCD6BC;
+	-fx-text-fill: #3B2F1D;
+	
+	}

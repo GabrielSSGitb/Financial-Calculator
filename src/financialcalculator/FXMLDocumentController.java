@@ -103,7 +103,8 @@ public class FXMLDocumentController implements Initializable {
     		st.clearArray();
     		txtScreen.setText("0");
     		lbPrefix.setText("");
-    		f = false;
+    		sumCounter = 0;
+    		g = false;
     	}
     }
 
@@ -139,16 +140,12 @@ public class FXMLDocumentController implements Initializable {
                /* To get data stored in the calculator: */
                txtScreen.setText(Double.toString(stoClass.getRCL(Integer.parseInt(value))));
                 rcl = false;
-        }else if(f == true) {
-        	sf.decimalFormater(value);
-        	txtScreen.setText("0.00");
-        	f = false;
-        	System.out.println(sf.formatNumber("24"));
-        	lbPrefix.setText("");
+        
         }else if(value.equals("0") && g == true) {
+        	txtScreen.setText("");
         	simpleAVG();
-        }
-    }
+        }}
+    
     
     @FXML
     public void stoBTN(ActionEvent event) {
@@ -280,6 +277,9 @@ public class FXMLDocumentController implements Initializable {
         //Put the point on decimal values in the textField
         if (!txtScreen.getText().contains(".")) {
             txtScreen.appendText(".");
+        }else if(g == true) {
+        	deviationBTN();
+        	g = false;
         }
     }
 
@@ -392,6 +392,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void simpleAVG() {
     	txtScreen.setText(Double.toString(st.avg()));
+    	g = false;
+    }
+    @FXML
+    public void deviationBTN() {
+    	txtScreen.setText(Double.toString(st.deviation()));
+    	lbPrefix.setText("");
     	g = false;
     }
     
