@@ -392,10 +392,20 @@ public class FXMLDocumentController implements Initializable {
     //To call statistical methods:
     @FXML
     public void sum(ActionEvent event) {
-    	sumCounter++;
-    	st.positiveSum(Double.parseDouble(txtScreen.getText()));
-    	lbPrefix.setText(Integer.toString(sumCounter));
-    	txtScreen.setText("0");
+    	if(g == false) {
+    		sumCounter++;
+        	st.positiveSum(Double.parseDouble(txtScreen.getText()));
+        	lbPrefix.setText(Integer.toString(sumCounter));
+        	txtScreen.setText("0");
+    	}else {
+    		g = false;
+    		lbPrefix.setText("");
+    		st.removesimpleAVG(Double.parseDouble(txtScreen.getText()));
+    	}
+    }
+    @FXML
+    public void removeNumInSUM() {
+    	txtScreen.setText("Okay!!");
     }
     @FXML
     public void simpleAVG() {
