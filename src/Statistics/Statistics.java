@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Statistics {
 	public ArrayList<Double> sumMemory = new ArrayList<>(); //Creating an arrayList for sum memory
+	public ArrayList<Double> weight = new ArrayList<>();
 	private double avg  = 0.00;
 	private double deviation;
 	//For saving the values on the array:
@@ -20,6 +21,16 @@ public class Statistics {
 		avg = result/this.sumMemory.size();
 		return avg;
 	}
+	//To calculate evaluated average:
+	public void evaluateAVG(double num){
+		this.weight.add(num);
+	}
+	public double evaluatedAVGRESULT() {
+		for(int i = 0; i < sumMemory.size(); i++) {
+			this.avg += (this.sumMemory.get(i) * this.weight.get(i));
+		}
+		return this.avg/this.sumMemory.size();
+	}
 	//To calculate standard deviation:
 	public double deviation() {
 		for(int i = 0; i < sumMemory.size(); i++) {
@@ -30,6 +41,7 @@ public class Statistics {
 	//To reset the array values:
 	public void clearArray() {
 		this.sumMemory.clear();
+		this.weight.clear();
 		this.deviation = 0.00;
 		this.avg = 0.00;
 		

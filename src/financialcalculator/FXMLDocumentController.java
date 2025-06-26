@@ -104,6 +104,7 @@ public class FXMLDocumentController implements Initializable {
     		txtScreen.setText("0");
     		lbPrefix.setText("");
     		sumCounter = 0;
+    		f = false;
     		g = false;
     	}
     }
@@ -143,8 +144,15 @@ public class FXMLDocumentController implements Initializable {
         
         }else if(value.equals("0") && g == true) {
         	txtScreen.setText("");
+        	lbPrefix.setText("");
         	simpleAVG();
-        }}
+        }else if(value.equals("6") && g == true) {
+        	txtScreen.setText("");
+        	lbPrefix.setText("");
+        	evaluatedAVG();
+        }
+        
+    }
     
     
     @FXML
@@ -399,8 +407,15 @@ public class FXMLDocumentController implements Initializable {
     	txtScreen.setText(Double.toString(st.deviation()));
     	lbPrefix.setText("");
     	g = false;
+    	f = false;
     }
-    
+    @FXML
+    public void evaluatedAVG() {
+    	for(int i = 0; i < array.size(); i++) {
+    		st.evaluateAVG(array.get(i));
+    	}
+    	txtScreen.setText(Double.toString(st.evaluatedAVGRESULT()));
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
