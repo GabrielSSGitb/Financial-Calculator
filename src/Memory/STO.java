@@ -1,8 +1,5 @@
 package Memory;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class STO {
 
@@ -13,6 +10,7 @@ public class STO {
     }
 
     public double getRCL(int index) {
+    	System.out.println(this.reg[index]);
         return this.reg[index];
     }
 

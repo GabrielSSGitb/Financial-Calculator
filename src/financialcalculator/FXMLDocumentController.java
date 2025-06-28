@@ -26,6 +26,7 @@ public class FXMLDocumentController implements Initializable {
     STO stoClass = new STO();
     //Values saving and variables declarations:
     private double result;
+    private int decimalPoint = 0;
     private int sumCounter = 0;
     private int stoCounter = 0;
     private boolean sto = false;
@@ -65,7 +66,7 @@ public class FXMLDocumentController implements Initializable {
         array.clear();
         f = false;
         g = false;
-        txtScreen.setText("0");
+        setText(0.00);
     }
 
     //Enter BTN:
@@ -73,7 +74,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void Enter(ActionEvent event) {
         array.add(Double.parseDouble(txtScreen.getText()));
-        txtScreen.setText("0");
+        setText(0.00);
         if (g == true && f == true) {
             /*Cleans the prefix´s selection in case of wrong pressing*/
             f = true;
@@ -88,7 +89,7 @@ public class FXMLDocumentController implements Initializable {
     public void CLX(ActionEvent event) {
         if (f == true) {
             array.clear(); //Clean memory on the calculator
-            txtScreen.setText("0");
+            setText(0.00);
             lbPrefix.setText("");
             f = false;
             stoClass.clearMemory(); //Clean the Calculator STO registers!
@@ -101,7 +102,7 @@ public class FXMLDocumentController implements Initializable {
     	if(f == true) {
     		//For clening the sum memory array:
     		st.clearArray();
-    		txtScreen.setText("0");
+    		setText(0.00);
     		lbPrefix.setText("");
     		sumCounter = 0;
     		f = false;
@@ -139,7 +140,7 @@ public class FXMLDocumentController implements Initializable {
             sto = false;
         } else if (rcl == true) {
                /* To get data stored in the calculator: */
-               txtScreen.setText(Double.toString(stoClass.getRCL(Integer.parseInt(value))));
+               txtScreen.setText(Double.toString(stoClass.getRCL(Integer.parseInt(current))));
                 rcl = false;
         
         }else if(value.equals("0") && g == true) {
@@ -150,11 +151,20 @@ public class FXMLDocumentController implements Initializable {
         	txtScreen.setText("");
         	lbPrefix.setText("");
         	evaluatedAVG();
+        }else if(f == true && value != "") {
+        	txtScreen.setText("");
+        	decimalPoint = Integer.parseInt(value);
+        	setText(Double.parseDouble(current));
+        	txtScreen.setText(sf.decimalFormater(Double.parseDouble(txtScreen.getText()), decimalPoint));
+        	lbPrefix.setText("");
+        	f = false;
         }
         
     }
-    
-    
+    @FXML
+    public void setText(double number) {
+    	txtScreen.setText(sf.getFormatedNumber(number));
+    }
     @FXML
     public void stoBTN(ActionEvent event) {
         sto = true;
@@ -178,7 +188,7 @@ public class FXMLDocumentController implements Initializable {
         };
         array.clear(); //Clean the array
         array.add(result); //Update value on the array
-        txtScreen.setText(Double.toString(result));
+        setText(result);
     }
     
     ;
@@ -191,7 +201,7 @@ public class FXMLDocumentController implements Initializable {
         };
         array.clear();
         array.add(result);
-        txtScreen.setText(Double.toString(result));
+        setText(result);
     }
     
     ;
@@ -204,7 +214,7 @@ public class FXMLDocumentController implements Initializable {
         };
         array.clear();
         array.add(result);
-        txtScreen.setText(Double.toString(result));
+        setText(result);
     }
     
     ;
@@ -218,7 +228,7 @@ public class FXMLDocumentController implements Initializable {
         }
         array.clear();
         array.add(result);
-        txtScreen.setText(Double.toString(result));
+        setText(result);
     }
 
     //Passing money interest information:
@@ -229,7 +239,7 @@ public class FXMLDocumentController implements Initializable {
         txtScreen.setText("0");
         if (n == 0) {
             interest in = new interest();
-            txtScreen.setText(in.calculateAmort(pv, i, fv));
+            setText(in.calculateAmort(pv, i, fv));
         }
     }
     
@@ -240,7 +250,7 @@ public class FXMLDocumentController implements Initializable {
         txtScreen.setText("0");
         if (i == 0) {
             interest in = new interest();
-            txtScreen.setText(in.calculateTax(fv, pv, n)); //Put the result in the Screen
+            setText(in.calculateTax(fv, pv, n)); //Put the result in the Screen
         }
     }
     
@@ -251,7 +261,7 @@ public class FXMLDocumentController implements Initializable {
         txtScreen.setText("0");
         if (pv == 0) {
             interest in = new interest();
-            txtScreen.setText(in.calculatePV(n, i, fv)); //Put the result in the Screen
+            setText(in.calculatePV(n, i, fv)); //Put the result in the Screen
         }
         
     }
@@ -260,22 +270,22 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void fvbtn(ActionEvent event) {
         fv = Double.parseDouble(txtScreen.getText());
-        txtScreen.setText("0");
+        setText(0.00);
         if (fv == 0) {
             interest in = new interest();
-            txtScreen.setText(in.calculateAmount(n, i, pv)); //Put the result in the Screen
+            setText(in.calculateAmount(n, i, pv)); //Put the result in the Screen
         }else if(pmt != 0) {
             interest in = new interest();
-            txtScreen.setText(in.calculateFVWithPMT(pv, i, n, pmt));
+            setText(in.calculateFVWithPMT(pv, i, n, pmt));
         }
     }
     @FXML
     public void PMTbtn(ActionEvent event) {
         pmt = Double.parseDouble(txtScreen.getText());
-        txtScreen.setText("0");
+        setText(0.00);
         if (pmt == 0) {
             interest in = new interest();
-            txtScreen.setText(in.calculatePMT(pv, i, n)); //Put the result in the Screen
+            setText(in.calculatePMT(pv, i, n)); //Put the result in the Screen
         }
         
     }
@@ -295,14 +305,14 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void CHS(ActionEvent event) {
         /* To put negative numbers on the calculator */
-        if (txtScreen.getText().equals("") || txtScreen.getText().equals("0") || txtScreen.getText().equals("0.00")) {
+        if (txtScreen.getText().equals("")) {
             txtScreen.setText("Error - no use");
         } else {
             FuncoesMatematica funcoes = new FuncoesMatematica();
             funcoes.adicionarOperacao("CHS");
             funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText()));
             funcoes.calcular();
-            txtScreen.setText(Double.toString(funcoes.getResultado()));
+            setText(funcoes.getResultado());
         }
     }
     

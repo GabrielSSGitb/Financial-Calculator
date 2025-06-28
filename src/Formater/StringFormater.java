@@ -1,23 +1,38 @@
 package Formater;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class StringFormater {
-	public String value = "0";
-	public String sFormated;
-	DecimalFormat df = new DecimalFormat(this.value);
+	ArrayList<Double> tempArray = new ArrayList<>();
+	DecimalFormat df = new DecimalFormat();
 	
-	public void decimalFormater(String value) {
-		if(value.equals("1")) {
-			this.value = "0.0";
-			System.out.println("0.0");
+	//To format the decimal values according to the user´s choice:
+	public String decimalFormater(double number, int decimalPoint) {
+			if(decimalPoint == 0) {
+				this.df = new DecimalFormat("0");
+			}else if(decimalPoint == 1) {
+				this.df = new DecimalFormat("0.0");
+			}else if(decimalPoint == 2) {
+				this.df = new DecimalFormat("0.00");
+			}else if(decimalPoint == 3) {
+				this.df = new DecimalFormat("0.000");
+			}else if(decimalPoint == 4) {
+				this.df = new DecimalFormat("0.0000");
+			}else if(decimalPoint == 5) {
+				this.df = new DecimalFormat("0.00000");
+			}else if(decimalPoint == 6) {
+				this.df = new DecimalFormat("0.000000");
+			}else if(decimalPoint == 7) {
+				this.df = new DecimalFormat("0.0000000");
+			}else if(decimalPoint == 8) {
+				this.df = new DecimalFormat("0.00000000");
+			}else if(decimalPoint == 9) {
+				this.df = new DecimalFormat("0.000000000");
+			}
+			return this.df.format(number);
 		}
-	}
-	public void formatNumber(String value) {
-		this.sFormated = df.format(value);
-		System.out.println(this.sFormated);
-	}
-	public String getFormatNumber() {
-		return this.sFormated;
+	public String getFormatedNumber(double number) {
+		return this.df.format(number);
 	}
 }
