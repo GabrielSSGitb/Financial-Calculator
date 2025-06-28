@@ -72,16 +72,6 @@ src/
 
 ---
 
-
-## 💻 Technologies Used
-
-- Java 17+ ☕
-- JavaFX (FXML)
-- Scene Builder (for UI design)
-- Recommended IDEs: IntelliJ, Eclipse, or NetBeans
-
----
-
 ## 🔢 Financial Formulas Implemented
 
 ### 📍 Payment (PMT):
@@ -156,12 +146,3 @@ Fork the repository and submit Pull Requests
 👨‍💻 Author
 Gabriel Santos Silva
 📧 gabrielsantossilva10gtv@gmail.com
-
-
-
-Team:
-👨‍💻 João Pedro Almeida - Jp-Almeida0913
-
-👨‍💻 Arthur Augusto - ArthurAugusto-1203
-
-👨‍💻 Estevan Santos - EstevamLuiz
