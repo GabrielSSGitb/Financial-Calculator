@@ -324,13 +324,13 @@ public class FXMLDocumentController implements Initializable {
             funcoes.adicionarNumero(array.get(0)); //Base
             funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText())); // Expoente
             funcoes.calcular();
-            txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
+            setText(funcoes.getResultado()); //Show the result on the screen
 
         } else if (g == true) {
             funcoes.adicionarOperacao("√"); //Inform operation
             funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText())); //Pass the value
             funcoes.calcular();
-            txtScreen.setText(Double.toString(funcoes.getResultado())); //Show the result on the screen
+            setText(funcoes.getResultado()); //Show the result on the screen
             array.add(funcoes.getResultado()); // add the result on the main array
             lbPrefix.setText("");
             g = false;
@@ -345,7 +345,7 @@ public class FXMLDocumentController implements Initializable {
             funcoes.adicionarOperacao("e");
             funcoes.adicionarNumero(array.get(0));
             funcoes.calcular();
-            txtScreen.setText(Double.toString(funcoes.getResultado()));
+            setText(funcoes.getResultado());
             lbPrefix.setText("");
             g = false;
         } else {
@@ -354,7 +354,7 @@ public class FXMLDocumentController implements Initializable {
             funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText()));
             funcoes.adicionarOperacao("numx");
             funcoes.calcular();
-            txtScreen.setText(Double.toString(funcoes.getResultado()));
+            setText(funcoes.getResultado());
             array.add(funcoes.getResultado());
         }
     }
@@ -367,7 +367,7 @@ public class FXMLDocumentController implements Initializable {
             funcoes.adicionarOperacao("ln");
             funcoes.adicionarNumero(Double.parseDouble(txtScreen.getText()));
             funcoes.calcular();
-            txtScreen.setText(Double.toString(funcoes.getResultado()));
+            setText(funcoes.getResultado());
             lbPrefix.setText("");
             g = false;
         } else {
@@ -386,7 +386,7 @@ public class FXMLDocumentController implements Initializable {
                 double temp2 = array.get(1);
                 array.set(1, temp);
                 array.set(0, temp2);
-                txtScreen.setText(Double.toString(temp2));
+                setText(temp2);
                 x = 1;
             } else {
                 //case x has been moved:
@@ -394,7 +394,7 @@ public class FXMLDocumentController implements Initializable {
                 double temp2 = array.get(1);
                 array.set(1, temp2);
                 array.set(0, temp);
-                txtScreen.setText(Double.toString(temp));
+                setText(temp);
                 x = 0;
             }
         }
@@ -406,7 +406,7 @@ public class FXMLDocumentController implements Initializable {
     		sumCounter++;
         	st.positiveSum(Double.parseDouble(txtScreen.getText()));
         	lbPrefix.setText(Integer.toString(sumCounter));
-        	txtScreen.setText("0");
+        	setText(0);
     	}else {
     		g = false;
     		lbPrefix.setText("");
@@ -419,12 +419,12 @@ public class FXMLDocumentController implements Initializable {
     }
     @FXML
     public void simpleAVG() {
-    	txtScreen.setText(Double.toString(st.avg()));
+    	setText(st.avg());
     	g = false;
     }
     @FXML
     public void deviationBTN() {
-    	txtScreen.setText(Double.toString(st.deviation()));
+    	setText(st.deviation());
     	lbPrefix.setText("");
     	g = false;
     	f = false;
@@ -434,7 +434,7 @@ public class FXMLDocumentController implements Initializable {
     	for(int i = 0; i < array.size(); i++) {
     		st.evaluateAVG(array.get(i));
     	}
-    	txtScreen.setText(Double.toString(st.evaluatedAVGRESULT()));
+    	setText(st.evaluatedAVGRESULT());
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
