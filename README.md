@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/images/Logo.png" alt="Project Logo" width="300">
+  <img src="./paraguai12c/src/main/resources/com/financialcalculator/images/Logo.png" alt="Project Logo" width="300">
 </p>
 
 # 🧠 HP-12C Financial Calculator (JavaFX)
