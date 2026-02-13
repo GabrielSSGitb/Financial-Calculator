@@ -14,10 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import Memory.STO;
 import Statistics.Statistics;
-/**
- *
- * @author gabri
- */
+
 public class financialcalculator implements Initializable {
 	//Calling objects:
     ArrayList<Double> array = new ArrayList<>(); //Creating an arrayList for register memory
